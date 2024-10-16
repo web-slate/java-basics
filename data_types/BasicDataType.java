@@ -15,5 +15,11 @@ public class BasicDataType {
     System.out.println("boolean - true or false");
   }
 }
+/*Two types of data types
+ * Primitive data types - byte, short, int, long, float, double, boolean and char
+ * Non-primitive data types - such as String, Arrays and Classes
+ */
 
+
+ //Execute the below command
 // javac data_types/BasicDataType.java && java data_types.BasicDataType
