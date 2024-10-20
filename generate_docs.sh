@@ -20,6 +20,11 @@ Welcome to the Webslate documentation for Java Basics.
 ## Table of Contents
 EOF
 
+# Function to convert PascalCase to underscore_case
+convert_to_underscore() {
+    echo "$1" | sed -E 's/([a-z])([A-Z])/\1_\2/g' | tr '[:upper:]' '[:lower:]'
+}
+
 # Function to process each directory
 process_directory() {
     local dir="$1"
@@ -60,14 +65,16 @@ process_directory() {
     for java_file in "$dir"/*.java; do
         if [[ -f "$java_file" ]]; then
             local file_name=$(basename "$java_file")
-            local link_name="${file_name%.java}.md"
+            local link_name=$(convert_to_underscore "${file_name%.java}").md  # Convert filename to underscore_case and change extension to .md
+            
             echo "- [$link_name](./$link_name)" >> "$md_file"
 
             # Create a Markdown file for the Java file with syntax highlighting
             {
-                echo "## $link_name"
+                echo "## $file_name"  # Use original Java file name for heading
                 echo '```java'
                 cat "$java_file"
+                echo ''  # Add a new line before closing tildes
                 echo '```'
             } > "$output_dir/$link_name"
 
@@ -86,83 +93,60 @@ process_directory() {
     for subdir in "$dir"/*/; do
         if [[ -d "$subdir" ]]; then
             process_directory "$subdir"
-            # Add link to subdirectory in current index.md, linking to index.html.
-            local subdir_name=$(basename "$subdir")
-            echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
-        fi
+            
+            # Check if the subdirectory has an index.md file before adding it to navigation.
+            if [[ -f "$subdir/index.md" ]]; then 
+                local subdir_name=$(basename "$subdir")
+                echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
+            fi 
+        fi 
     done
 
     # Copy existing .md files (like intro.md) to the output directory, excluding index.md.
-    for existing_md in "$dir"/*.md; do
-        if [[ -f "$existing_md" && "$(basename "$existing_md")" != "index.md" ]]; then
+    for existing_md in "$dir"/*.md; do 
+        if [[ -f "$existing_md" && "$(basename "$existing_md")" != "index.md" ]]; then 
             cp "$existing_md" "$output_dir/"
             echo "Copied existing Markdown file: $output_dir/$(basename "$existing_md")"
-        fi
+        fi 
     done
 
-    # Add link to the main docs/index.md, linking to index.html.
-    if [[ -n "$relative_path" ]]; then  # Check if relative_path is not empty.
-        local dir_name=$(basename "$dir")
-        echo "- [$dir_name](./$relative_path/index.html)" >> "$OUTPUT_DIR/index.md"
-    fi
+   # Add link to main docs/index.md, linking to index.html.
+   if [[ -n "$relative_path" ]]; then  # Check if relative_path is not empty.
+       local dir_name=$(basename "$dir")
+       echo "- [$dir_name](./$relative_path/index.html)" >> "$OUTPUT_DIR/index.md"
+   fi 
 }
 
-# Start processing from the root directory, skipping src/main/java itself.
+# Start processing from root directory, skipping src/main/java itself.
 for dir in $ROOT_DIR/*; do 
   if [[ -d $dir ]]; then 
       process_directory "$dir"
   fi 
 done
 
-# Create the mkdocs.yml file outside the docs directory with theme settings.
-cat <<EOF > mkdocs.yml
-site_name: 'Webslate - Java Basics'
-site_url: 'https://web-slate.github.io/java-basics/'
-theme:
-  name: material  # Use a theme that supports sidebar navigation.
-  features:
-    - navigation.sections  # Enable sections in the sidebar.
-    - navigation.expand  # Automatically expand sections in the sidebar.
+# Create mkdocs.yml file outside docs directory with theme settings.
+cat <<EOF > mkdocs.yml 
+site_name: 'Webslate - Java Basics' 
+site_url: 'https://web-slate.github.io/java-basics/' 
+theme: 
+  name: material  # Use a theme that supports sidebar navigation. 
+  features: 
+   - navigation.sections  # Enable sections in sidebar. 
+   - navigation.expand  # Automatically expand sections in sidebar. 
+   - navigation.path  # Enable breadcrumb navigation.
+
+plugins:
+  - search
+  - gen_nav:
+      enabled: true
 
 nav:
-  - Home: index.md
-EOF
-
-# Function to add navigation links hierarchically and fix broken links.
-add_nav_links() {
-    local dir="$1"
-    local relative_path="${dir#$ROOT_DIR/}"
-
-    # Add links for Java files and ensure correct naming.
-    for java_file in "$dir"/*.java; do
-        if [[ -f "$java_file" ]]; then
-            local file_name=$(basename "$java_file")
-            local link_name="${file_name%.java}.html"  # Change .md to .html here.
-            echo "  - ${file_name%.java}: ${relative_path//\//\/}$link_name/" >> mkdocs.yml  # Remove docs prefix and add / at end.
-        fi
-    done
-
-    # Add links for subdirectories.
-    for subdir in "$dir"/*/; do
-        if [[ -d "$subdir" ]]; then
-            local subdir_name=$(basename "$subdir")
-            echo "  - $subdir_name:" >> mkdocs.yml
-            
-            # Link to index.html without /site/ prefix and ensure it ends with /
-            echo "    - index: $subdir_name/" >> mkdocs.yml
-            
-            add_nav_links "$subdir"
-        fi
-    done
-    
-}
-
-# Add links to mkdocs.yml from each subdirectory of ROOT_DIR.
-for dir in $ROOT_DIR/*; do 
-  if [[ -d $dir ]]; then 
-      add_nav_links "$dir"
-  fi 
-done
+  - Basics: basics/index.md               # Link to Basics section
+  - Data Types: data_types/index.md        # Link to Data Types section
+  - Data Structures: data_structures/index.md  # Link to Data Structures section
+  - Algorithms: algorithms/index.md         # Link to Algorithms section
+  - OOPs: oops/index.md                     # Link to OOPs section
+EOF 
 
 # Correct specific paths in mkdocs.yml (make sure this is valid).
 sed -i '' 's|docs/src/main/java/docs|docs|g' mkdocs.yml || true 
