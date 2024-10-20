@@ -31,20 +31,14 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
       
-    - name: Generate Markdown Documentation
+    - name: Generate Documentation
       run: |
         chmod +x ./generate_docs.sh
         ./generate_docs.sh
 
-    - name: List files in publish directory
-      run: ls -R ./target/site/apidocs  # Ensure documentation files exist
-      
-    - name: Generate JavaDoc
-      run: mvn javadoc:javadoc
-      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/site/apidocs
+        publish_dir: ./docs  # Change to the new docs directory
         keep_files: true
