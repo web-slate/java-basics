@@ -1,52 +1,43 @@
 #!/bin/bash
 
-# Create a base directory for documentation if it doesn't exist
-mkdir -p docs
+# Define the root directory of your Java source files
+ROOT_DIR="src/main/java"
 
-# Function to generate markdown for a directory
-generate_markdown() {
-  local dir_path=$1
-  local md_file="$dir_path/index.md"
+# Define the output directory for Markdown files
+OUTPUT_DIR="docs"
 
-  # Create an index.md file for the current directory
-  echo "# $(basename "$dir_path")" > "$md_file"
-  echo "" >> "$md_file"
-  
-  # Loop through the contents of the directory
-  for item in "$dir_path"/*; do
-    if [[ -d "$item" ]]; then
-      # If it's a directory, link to its index.md
-      echo "- [$(basename "$item")](./$(basename "$item")/index.md)" >> "$md_file"
-    elif [[ -f "$item" && "$item" == *.java ]]; then
-      # If it's a .java file, include it in the index.md
-      echo "- [$(basename "$item")](./$(basename "$item"))" >> "$md_file"
-    fi
-  done
+# Create the output directory if it doesn't exist
+mkdir -p "$OUTPUT_DIR"
 
-  # Convert all .java files in the current directory to Markdown
-  for java_file in "$dir_path"/*.java; do
-    if [[ -f "$java_file" ]]; then
-      local java_filename=$(basename "$java_file")
-      local java_basename="${java_filename%.*}"
-      local java_md_file="$dir_path/$java_basename.md"
+# Function to process each directory
+process_directory() {
+    local dir="$1"
+    local md_file="$OUTPUT_DIR/$(basename "$dir").md"
 
-      echo "```java" > "$java_md_file"  # Start Java code block
-      cat "$java_file" >> "$java_md_file"  # Append Java code
-      echo "```" >> "$java_md_file"  # End Java code block
-      echo "- [$java_basename](./$java_basename.md)" >> "$md_file"  # Link to the .md file
-    fi
-  done
+    # Create an index.md for the current directory
+    echo "# $(basename "$dir")" > "$md_file"
+    echo "" >> "$md_file"
+
+    # Add links to index.md for each .java file in the directory
+    for java_file in "$dir"/*.java; do
+        if [[ -f "$java_file" ]]; then
+            local file_name=$(basename "$java_file")
+            echo "- [$file_name](./${file_name%.java}.md)" >> "$md_file"
+
+            # Create a Markdown file for the Java file with syntax highlighting
+            echo "```java" > "$OUTPUT_DIR/${file_name%.java}.md"
+            cat "$java_file" >> "$OUTPUT_DIR/${file_name%.java}.md"
+            echo "```" >> "$OUTPUT_DIR/${file_name%.java}.md"
+        fi
+    done
+
+    # Recursively process subdirectories
+    for subdir in "$dir"/*/; do
+        if [[ -d "$subdir" ]]; then
+            process_directory "$subdir"
+        fi
+    done
 }
 
-# Call the function for each top-level directory in src/main/java
-for dir in src/main/java/*; do
-  if [[ -d "$dir" ]]; then
-    generate_markdown "$dir"
-  fi
-done
-
-# Move generated markdown files to docs directory
-mv src/main/java/*/index.md docs/
-mv src/main/java/*/*.md docs/
-
-echo "Documentation has been generated in the docs directory."
+# Start processing from the root directory
+process_directory "$ROOT_DIR"
