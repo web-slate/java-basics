@@ -17,7 +17,7 @@ return main(return type paramName) {}
 1. you can check your java compiler version by `javac -version`
 1. you can check your java version by `java -version`
 1. First compile your java code by `javac -verbose basics/Basics.java`, After compilation, this will generate java.class file along with package and basic statements.
-1. Class name should always start with an uppercase first letter. Run your java class after compiled by `java basics.Basics`
+1. Class name should always start with an **uppercase first letter**. Run your java class after compiled by `java basics.Basics`
 1. The name of the java file must match the class name.
 1. Any code inside the main() method will be executed.
 1. You should also note that each code statement must end with a semicolon (;).
