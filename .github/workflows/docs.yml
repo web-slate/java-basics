@@ -35,7 +35,14 @@ jobs:
       run: |
         chmod +x ./generate_docs.sh
         ./generate_docs.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If needed in the script
 
+    - name: List generated docs
+      run: |
+        echo "Generated Markdown files:"
+        find ./docs -name "*.md"
+      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
