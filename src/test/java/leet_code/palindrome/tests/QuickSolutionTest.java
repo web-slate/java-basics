@@ -1,8 +1,8 @@
 package leet_code.palindrome.tests;
 
 import leet_code.palindrome.QuickSolution;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class QuickSolutionTest {
     private final QuickSolution solution = new QuickSolution();

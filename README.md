@@ -36,3 +36,15 @@ mvn javadoc:javadoc
 ```
 mvn verify
 ```
+
+## Other usefull maven commands.
+
+Revalidate the Dependencies
+Force Maven to revalidate all dependencies and clean the project by running the following commands:
+
+```
+mvn clean
+mvn dependency:purge-local-repository
+mvn dependency:resolve
+mvn install
+```

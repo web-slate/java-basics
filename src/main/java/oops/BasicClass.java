@@ -1,5 +1,5 @@
-package OOPS;
+package oops;
 
-public class basic_class {
+public class BasicClass {
   
 }
