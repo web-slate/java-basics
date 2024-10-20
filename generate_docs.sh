@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e  # Exit immediately if a command exits with a non-zero status.
+
 # Define the root directory of your Java source files
 ROOT_DIR="src/main/java"
 
@@ -21,96 +23,134 @@ EOF
 # Function to process each directory
 process_directory() {
     local dir="$1"
-    local relative_path=${dir#$ROOT_DIR/}  # Get the relative path from the root directory
+    local relative_path="${dir#$ROOT_DIR/}"
+    local output_dir="$OUTPUT_DIR/$relative_path"
 
-    # Create directories in the output path
-    mkdir -p "$OUTPUT_DIR/$relative_path"
+    # Remove trailing slashes to prevent double slashes in paths
+    output_dir="${output_dir%/}"
+
+    # Create the output directory if it doesn't exist
+    mkdir -p "$output_dir"
 
     # Create or merge an index.md for the current directory
-    local md_file="$OUTPUT_DIR/$relative_path/index.md"  # Markdown file path
+    local md_file="$output_dir/index.md"
 
-    # Start with the title and existing content if present
-    echo "# $(basename "$dir")" > "$md_file"  # Start with the title
-    echo "" >> "$md_file"  # Add a blank line
+    # Start with the title and basic content
+    echo "# $(basename "$dir")" > "$md_file"
+    echo "" >> "$md_file"
+    echo "This section covers $(basename "$dir")." >> "$md_file"
+    echo "" >> "$md_file"
 
-    # Check if the index.md already exists and merge with existing content
+    # Check if the index.md already exists in the source and merge with existing content
     if [[ -f "$dir/index.md" ]]; then
         echo "Merging content from existing $dir/index.md into $md_file"
         cat "$dir/index.md" >> "$md_file"
-        echo "" >> "$md_file"  # Add a blank line after merging
+        echo "" >> "$md_file"
     fi
+
+    # Flag to track if any Java files were found
+    local java_found=false
 
     # Add links to index.md for each .java file in the directory
     for java_file in "$dir"/*.java; do
         if [[ -f "$java_file" ]]; then
             local file_name=$(basename "$java_file")
-            local link_name=$(basename "$file_name" .java)
-            # Fixing the link to avoid double slashes
-            echo "- [$link_name](${relative_path}/${file_name%.java}.md)" >> "$md_file"
+            local link_name="${file_name%.java}.md"
+            echo "- [$link_name](./$link_name)" >> "$md_file"
 
             # Create a Markdown file for the Java file with syntax highlighting
             {
-                echo "## $link_name"  # Add title for the Java file
-                echo '```java'  # Start the code block
-                cat "$java_file"  # Add the contents of the Java file
-                echo '```'  # End the code block
-            } > "$OUTPUT_DIR/$relative_path/${file_name%.java}.md"
+                echo "## $link_name"
+                echo '```java'
+                cat "$java_file"
+                echo '```'
+            } > "$output_dir/$link_name"
 
-            echo "Markdown file created: $OUTPUT_DIR/$relative_path/${file_name%.java}.md"
+            echo "Markdown file created: $output_dir/$link_name"
+            java_found=true
         fi
     done
+
+    # Only create index.md if Java files were found
+    if ! $java_found; then
+        rm "$md_file"  # Remove the empty index file
+        echo "No Java files found in $dir, removed empty index.md"
+    fi
 
     # Recursively process subdirectories
     for subdir in "$dir"/*/; do
         if [[ -d "$subdir" ]]; then
             process_directory "$subdir"
+            # Add link to subdirectory in current index.md, linking to index.html.
+            local subdir_name=$(basename "$subdir")
+            echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
         fi
     done
 
-    # Copy existing .md files (like intro.md) to the output directory
+    # Copy existing .md files (like intro.md) to the output directory, excluding index.md.
     for existing_md in "$dir"/*.md; do
-        if [[ -f "$existing_md" ]]; then
-            cp "$existing_md" "$OUTPUT_DIR/$relative_path/"
-            echo "Copied existing Markdown file: $OUTPUT_DIR/$relative_path/$(basename "$existing_md")"
+        if [[ -f "$existing_md" && "$(basename "$existing_md")" != "index.md" ]]; then
+            cp "$existing_md" "$output_dir/"
+            echo "Copied existing Markdown file: $output_dir/$(basename "$existing_md")"
         fi
     done
 
-    # Merging links for all generated Markdown files to the index.md in the current directory
-    for md_file in "$OUTPUT_DIR/$relative_path/"*.md; do
-        if [[ -f "$md_file" && "$md_file" != "$OUTPUT_DIR/$relative_path/index.md" ]]; then
-            local link_name=$(basename "$md_file" .md)
-            # Ensure correct relative path for the link
-            echo "- [$link_name](${relative_path}/$(basename "$md_file"))" >> "$OUTPUT_DIR/$relative_path/index.md"
-        fi
-    done
-
-    # Add links to the main docs/index.md for all generated Markdown files in the current directory
-    if [[ "$relative_path" == "" ]]; then
-        for md_file in "$OUTPUT_DIR/"*.md; do
-            if [[ -f "$md_file" && "$md_file" != "$OUTPUT_DIR/index.md" ]]; then
-                local link_name=$(basename "$md_file" .md)
-                echo "- [$link_name]($(basename "$md_file"))" >> "$OUTPUT_DIR/index.md"
-            fi
-        done
+    # Add link to the main docs/index.md, linking to index.html.
+    if [[ "$relative_path" != "" ]]; then
+        local dir_name=$(basename "$dir")
+        echo "- [$dir_name](./$relative_path/index.html)" >> "$OUTPUT_DIR/index.md"
     fi
-
-    # Add links to the main docs/index.md for files in the current directory
-    for md_file in "$OUTPUT_DIR/$relative_path/"*.md; do
-        if [[ -f "$md_file" && "$md_file" != "$OUTPUT_DIR/$relative_path/index.md" ]]; then
-            local link_name=$(basename "$md_file" .md)
-            echo "- [$link_name](${relative_path}/$(basename "$md_file"))" >> "$OUTPUT_DIR/index.md"
-        fi
-    done
 }
 
 # Start processing from the root directory
 process_directory "$ROOT_DIR"
 
-# Create the _config.yml for GitHub Pages
-cat <<EOF > "$OUTPUT_DIR/_config.yml"
-title: "Webslate - Java Basics"
-description: "A comprehensive guide to learning Java programming."
-theme: minima
+# Create the mkdocs.yml file outside the docs directory with theme settings.
+cat <<EOF > mkdocs.yml
+site_name: 'Webslate - Java Basics'
+theme:
+  name: material  # Use a theme that supports sidebar navigation.
+  features:
+    - navigation.sections  # Enable sections in the sidebar.
+    - navigation.expand  # Automatically expand sections in the sidebar.
+
+nav:
+  - Home: index.md
 EOF
 
-echo "Generated _config.yml for GitHub Pages."
+# Function to add navigation links hierarchically and fix broken links.
+add_nav_links() {
+    local dir="$1"
+    local relative_path="${dir#$ROOT_DIR/}"
+
+    # Add links for Java files and ensure correct naming.
+    for java_file in "$dir"/*.java; do
+        if [[ -f "$java_file" ]]; then
+            local file_name=$(basename "$java_file")
+            local link_name="${file_name%.java}.md"
+            echo "  - ${link_name%.md}: $OUTPUT_DIR/$relative_path/$link_name" >> mkdocs.yml  # Remove .md from label.
+        fi
+    done
+
+    # Add links for subdirectories.
+    for subdir in "$dir"/*/; do
+        if [[ -d "$subdir" ]]; then
+            local subdir_name=$(basename "$subdir")
+            echo "  - $subdir_name:" >> mkdocs.yml
+            
+            # Link to index.html instead of index.md and correct path issues.
+            echo "    - index: /site/$subdir_name/index.html" >> mkdocs.yml
+            
+            add_nav_links "$subdir"
+        fi
+    done
+    
+}
+
+# Add links to mkdocs.yml from the root directory.
+add_nav_links "$ROOT_DIR"
+
+# Correct specific paths in mkdocs.yml.
+sed -i '' 's|docs/src/main/java/docs|docs|g' mkdocs.yml  # Fix specific paths.
+
+echo "Generated mkdocs.yml for MkDocs."
