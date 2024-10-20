@@ -9,6 +9,15 @@ OUTPUT_DIR="docs"
 # Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
+# Create the main index.md for the docs folder
+cat <<EOF > "$OUTPUT_DIR/index.md"
+# Webslate - Java Basics
+
+Welcome to the Webslate documentation for Java Basics.
+
+## Table of Contents
+EOF
+
 # Function to process each directory
 process_directory() {
     local dir="$1"
@@ -74,13 +83,25 @@ process_directory() {
             echo "- [$link_name](${relative_path}/$(basename "$md_file"))" >> "$OUTPUT_DIR/$relative_path/index.md"
         fi
     done
-}
 
-# Create the main index.md for the docs folder
-echo "# Webslate - Java Basics" > "$OUTPUT_DIR/index.md"
-echo "" >> "$OUTPUT_DIR/index.md"
-echo "Welcome to the Webslate documentation for Java Basics." >> "$OUTPUT_DIR/index.md"
-echo "" >> "$OUTPUT_DIR/index.md"
+    # Add links to the main docs/index.md for all generated Markdown files in the current directory
+    if [[ "$relative_path" == "" ]]; then
+        for md_file in "$OUTPUT_DIR/"*.md; do
+            if [[ -f "$md_file" && "$md_file" != "$OUTPUT_DIR/index.md" ]]; then
+                local link_name=$(basename "$md_file" .md)
+                echo "- [$link_name]($(basename "$md_file"))" >> "$OUTPUT_DIR/index.md"
+            fi
+        done
+    fi
+
+    # Add links to the main docs/index.md for files in the current directory
+    for md_file in "$OUTPUT_DIR/$relative_path/"*.md; do
+        if [[ -f "$md_file" && "$md_file" != "$OUTPUT_DIR/$relative_path/index.md" ]]; then
+            local link_name=$(basename "$md_file" .md)
+            echo "- [$link_name](${relative_path}/$(basename "$md_file"))" >> "$OUTPUT_DIR/index.md"
+        fi
+    done
+}
 
 # Start processing from the root directory
 process_directory "$ROOT_DIR"
@@ -93,4 +114,3 @@ theme: minima
 EOF
 
 echo "Generated _config.yml for GitHub Pages."
-echo "Generated docs/index.md for GitHub Pages."
