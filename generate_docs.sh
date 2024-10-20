@@ -117,6 +117,7 @@ done
 # Create the mkdocs.yml file outside the docs directory with theme settings.
 cat <<EOF > mkdocs.yml
 site_name: 'Webslate - Java Basics'
+site_url: 'https://web-slate.github.io/java-basics/'
 theme:
   name: material  # Use a theme that supports sidebar navigation.
   features:
@@ -147,8 +148,8 @@ add_nav_links() {
             local subdir_name=$(basename "$subdir")
             echo "  - $subdir_name:" >> mkdocs.yml
             
-            # Link to index.html instead of index.md and correct path issues.
-            echo "    - index: /site/$subdir_name/index.html" >> mkdocs.yml
+            # Link to index.html instead of index.md without /site/ prefix.
+            echo "    - index: $subdir_name/index.html" >> mkdocs.yml
             
             add_nav_links "$subdir"
         fi
