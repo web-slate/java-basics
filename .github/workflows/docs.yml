@@ -59,7 +59,8 @@ jobs:
 
     - name: Build MkDocs Site
       run: |
-        mkdocs build  # This will generate the site in docs/site
+        cd docs  # Change directory to where mkdocs.yml is located
+        mkdocs build  # This will generate the site in site directory
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
