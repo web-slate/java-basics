@@ -151,6 +151,6 @@ add_nav_links() {
 add_nav_links "$ROOT_DIR"
 
 # Correct specific paths in mkdocs.yml.
-sed -i '' 's|docs/src/main/java/docs|docs|g' mkdocs.yml  # Fix specific paths.
+sed -i 's|docs/src/main/java/docs|docs|g' mkdocs.yml  # Fix specific paths.
 
 echo "Generated mkdocs.yml for MkDocs."
