@@ -34,7 +34,7 @@ jobs:
     - name: Install MkDocs
       run: |
         python3 -m pip install --upgrade pip
-        pip install mkdocs mkdocs-material
+        pip install mkdocs mkdocs-material mkdocs-gen-nav-plugin
 
     - name: Generate Documentation
       run: |
@@ -43,7 +43,7 @@ jobs:
 
     - name: Build MkDocs Site
       run: |
-        mkdocs build  # This will generate the site in ../site
+        mkdocs build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
