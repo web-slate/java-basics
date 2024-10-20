@@ -138,7 +138,7 @@ add_nav_links() {
         if [[ -f "$java_file" ]]; then
             local file_name=$(basename "$java_file")
             local link_name="${file_name%.java}.html"  # Change .md to .html here.
-            echo "  - ${file_name%.java}: ${relative_path//\//\/}$link_name" >> mkdocs.yml  # Remove docs prefix and add .html extension.
+            echo "  - ${file_name%.java}: ${relative_path//\//\/}$link_name/" >> mkdocs.yml  # Remove docs prefix and add / at end.
         fi
     done
 
@@ -148,8 +148,8 @@ add_nav_links() {
             local subdir_name=$(basename "$subdir")
             echo "  - $subdir_name:" >> mkdocs.yml
             
-            # Link to index.html instead of index.md without /site/ prefix.
-            echo "    - index: $subdir_name/index.html" >> mkdocs.yml
+            # Link to index.html without /site/ prefix and ensure it ends with /
+            echo "    - index: $subdir_name/" >> mkdocs.yml
             
             add_nav_links "$subdir"
         fi
