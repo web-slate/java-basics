@@ -20,11 +20,6 @@ Welcome to the Webslate documentation for Java Basics.
 ## Table of Contents
 EOF
 
-# Function to convert PascalCase to underscore_case
-convert_to_underscore() {
-    echo "$1" | sed -E 's/([a-z])([A-Z])/\1_\2/g' | tr '[:upper:]' '[:lower:]'
-}
-
 # Function to process each directory
 process_directory() {
     local dir="$1"
@@ -45,8 +40,13 @@ process_directory() {
     # Create or merge an index.md for the current directory
     local md_file="$output_dir/index.md"
 
+    # Function to convert underscore_case back to Title Case
+    convert_to_title_case() {
+        echo "$1" | sed -E 's/_/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2); print}'
+    }
+
     # Start with the title and basic content
-    echo "# $(basename "$dir")" > "$md_file"
+    echo "# $(convert_to_title_case "$(basename "$dir")")" > "$md_file"
     echo "" >> "$md_file"
     echo "This section covers $(basename "$dir")." >> "$md_file"
     echo "" >> "$md_file"
@@ -61,21 +61,24 @@ process_directory() {
     # Flag to track if any Java files were found
     local java_found=false
 
+    # Function to convert PascalCase to underscore_case
+    convert_to_underscore() {
+        echo "$1" | sed -E 's/([a-z])([A-Z])/\1_\2/g' | tr '[:upper:]' '[:lower:]'
+    }
+
     # Add links to index.md for each .java file in the directory
     for java_file in "$dir"/*.java; do
         if [[ -f "$java_file" ]]; then
             local file_name=$(basename "$java_file")
             local link_name=$(convert_to_underscore "${file_name%.java}").md  # Convert filename to underscore_case and change extension to .md
-            
             echo "- [$link_name](./$link_name)" >> "$md_file"
 
             # Create a Markdown file for the Java file with syntax highlighting
             {
-                echo "## $file_name"  # Use original Java file name for heading
+                echo "## $file_name"
                 echo '```java'
                 cat "$java_file"
-                echo ''  # Add a new line before closing tildes
-                echo '```'
+                echo -e '\n```'
             } > "$output_dir/$link_name"
 
             echo "Markdown file created: $output_dir/$link_name"
@@ -93,47 +96,47 @@ process_directory() {
     for subdir in "$dir"/*/; do
         if [[ -d "$subdir" ]]; then
             process_directory "$subdir"
-            
-            # Check if the subdirectory has an index.md file before adding it to navigation.
-            if [[ -f "$subdir/index.md" ]]; then 
-                local subdir_name=$(basename "$subdir")
-                echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
-            fi 
-        fi 
+            # Add link to subdirectory in current index.md, linking to index.html.
+            local subdir_name=$(basename "$subdir")
+            echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
+        fi
     done
 
     # Copy existing .md files (like intro.md) to the output directory, excluding index.md.
-    for existing_md in "$dir"/*.md; do 
-        if [[ -f "$existing_md" && "$(basename "$existing_md")" != "index.md" ]]; then 
+    for existing_md in "$dir"/*.md; do
+        if [[ -f "$existing_md" && "$(basename "$existing_md")" != "index.md" ]]; then
             cp "$existing_md" "$output_dir/"
             echo "Copied existing Markdown file: $output_dir/$(basename "$existing_md")"
-        fi 
+        fi
     done
 
-   # Add link to main docs/index.md, linking to index.html.
-   if [[ -n "$relative_path" ]]; then  # Check if relative_path is not empty.
-       local dir_name=$(basename "$dir")
-       echo "- [$dir_name](./$relative_path/index.html)" >> "$OUTPUT_DIR/index.md"
-   fi 
+    # Add link to the main docs/index.md, linking to index.html.
+    if [[ -n "$relative_path" ]]; then  # Check if relative_path is not empty.
+        local dir_name=$(basename "$dir")
+        echo "- [$dir_name](./$relative_path/index.html)" >> "$OUTPUT_DIR/index.md"
+    fi
 }
 
-# Start processing from root directory, skipping src/main/java itself.
+# Start processing from the root directory, skipping src/main/java itself.
 for dir in $ROOT_DIR/*; do 
   if [[ -d $dir ]]; then 
       process_directory "$dir"
   fi 
 done
 
-# Create mkdocs.yml file outside docs directory with theme settings.
-cat <<EOF > mkdocs.yml 
-site_name: 'Webslate - Java Basics' 
-site_url: 'https://web-slate.github.io/java-basics/' 
-theme: 
-  name: material  # Use a theme that supports sidebar navigation. 
-  features: 
-   - navigation.sections  # Enable sections in sidebar. 
-   - navigation.expand  # Automatically expand sections in sidebar. 
-   - navigation.path  # Enable breadcrumb navigation.
+# Create the mkdocs.yml file outside the docs directory with theme settings.
+cat <<EOF > mkdocs.yml
+site_name: 'Webslate - Java Basics'
+site_url: 'https://web-slate.github.io/java-basics/'
+theme:
+  name: material  # Use a theme that supports sidebar navigation.
+  features:
+    - navigation.sections  # Enable sections in the sidebar.
+    - navigation.expand  # Automatically expand sections in the sidebar.
+    - navigation.expand  # Automatically expand sections in the sidebar.
+    - search.suggest       # Enable search suggestions.
+    - search.highlight      # Enable highlighting of search terms.
+    - search.share          # Enable sharing of search results.
 
 plugins:
   - search
@@ -141,12 +144,12 @@ plugins:
       enabled: true
 
 nav:
-  - Basics: basics/index.md              
-  - Data Types: data_types/index.md        
-  - Data Structures: data_structures/index.md 
-  - Algorithms: algorithms/index.md
-  - OOPs: oops/index.md 
-EOF 
+  - Basics: basics/index.md               # Link to Basics section
+  - Data Types: data_types/index.md        # Link to Data Types section
+  - Data Structures: data_structures/index.md  # Link to Data Structures section
+  - Algorithms: algorithms/index.md         # Link to Algorithms section
+  - OOPs: oops/index.md                     # Link to OOPs section
+EOF
 
 # Correct specific paths in mkdocs.yml (make sure this is valid).
 sed -i '' 's|docs/src/main/java/docs|docs|g' mkdocs.yml || true 
