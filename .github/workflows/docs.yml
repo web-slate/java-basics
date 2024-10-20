@@ -1,0 +1,47 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        
+    - name: Build with Maven
+      run: mvn clean install
+      
+    - name: Generate JavaDoc
+      run: mvn javadoc:javadoc
+      
+    - name: Generate Sidebar
+      run: |
+        echo "# Sidebar" > sidebar.md
+        for dir in src/main/java/*; do
+          if [ -d "$dir" ]; then
+            echo "## $(basename "$dir")" >> sidebar.md
+            for file in "$dir"/*.java; do
+              if [ -f "$file" ]; then
+                echo "- [$(basename "$file" .java)](${file#src/main/java/})" >> sidebar.md
+              fi
+            done
+          fi
+        done
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./target/site/apidocs
+        keep_files: true

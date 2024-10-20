@@ -18,3 +18,21 @@ mvn dependency:tree
 mvn clean compile
 mvn test
 ```
+
+## Run Test
+
+```
+mvn test
+```
+
+## Generate Docs
+
+```
+mvn javadoc:javadoc
+```
+
+## Check Coverage Report
+
+```
+mvn verify
+```
