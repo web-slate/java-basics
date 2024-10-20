@@ -32,7 +32,9 @@ jobs:
       run: mvn clean install
       
     - name: Generate Markdown Documentation
-      run: ./generate_docs.sh  # Run the script to generate Markdown files
+      run: |
+        chmod +x ./generate_docs.sh  # Make the script executable
+        ./generate_docs.sh            # Run the script to generate Markdown files
       
     - name: Generate JavaDoc
       run: mvn javadoc:javadoc
