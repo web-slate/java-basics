@@ -57,6 +57,9 @@ jobs:
             fi
         done
 
+        # Set the docs_dir to the correct path
+        echo "docs_dir: ." >> docs/mkdocs.yml
+
     - name: Build MkDocs Site
       run: |
         cd docs  # Change directory to where mkdocs.yml is located
