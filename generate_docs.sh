@@ -141,11 +141,11 @@ plugins:
       enabled: true
 
 nav:
-  - Basics: basics/index.md               # Link to Basics section
-  - Data Types: data_types/index.md        # Link to Data Types section
-  - Data Structures: data_structures/index.md  # Link to Data Structures section
-  - Algorithms: algorithms/index.md         # Link to Algorithms section
-  - OOPs: oops/index.md                     # Link to OOPs section
+  - Basics: basics/index.md              
+  - Data Types: data_types/index.md        
+  - Data Structures: data_structures/index.md 
+  - Algorithms: algorithms/index.md
+  - OOPs: oops/index.md 
 EOF 
 
 # Correct specific paths in mkdocs.yml (make sure this is valid).
