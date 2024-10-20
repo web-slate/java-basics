@@ -41,30 +41,8 @@ jobs:
         chmod +x ./generate_docs.sh
         ./generate_docs.sh
 
-    - name: Create mkdocs.yml
-      run: |
-        # Create the mkdocs.yml configuration file
-        echo "site_name: Webslate - Java Basics" > docs/mkdocs.yml
-        echo "theme:" >> docs/mkdocs.yml
-        echo "  name: material" >> docs/mkdocs.yml
-        echo "" >> docs/mkdocs.yml
-        echo "nav:" >> docs/mkdocs.yml
-        echo "  - Home: index.md" >> docs/mkdocs.yml
-        # Add links to generated Markdown files
-        for file in docs/*.md; do
-            if [[ "$file" != "docs/index.md" && -f "$file" ]]; then
-                file_name=$(basename "$file" .md)
-                echo "  - $file_name: $file_name.md" >> docs/mkdocs.yml
-            fi
-        done
-
-        # Ensure correct directory settings
-        echo "docs_dir: ." >> docs/mkdocs.yml
-        echo "site_dir: ../site" >> docs/mkdocs.yml  # Output to the site directory
-
     - name: Build MkDocs Site
       run: |
-        cd docs  # Change directory to where mkdocs.yml is located
         mkdocs build  # This will generate the site in ../site
 
     - name: Deploy to GitHub Pages
