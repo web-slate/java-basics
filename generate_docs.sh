@@ -26,6 +26,11 @@ process_directory() {
     local relative_path="${dir#$ROOT_DIR/}"
     local output_dir="$OUTPUT_DIR/$relative_path"
 
+    # Skip the root source directory itself
+    if [[ "$dir" == "$ROOT_DIR" ]]; then
+        return
+    fi
+
     # Remove trailing slashes to prevent double slashes in paths
     output_dir="${output_dir%/}"
 
@@ -96,14 +101,18 @@ process_directory() {
     done
 
     # Add link to the main docs/index.md, linking to index.html.
-    if [[ "$relative_path" != "" ]]; then
+    if [[ -n "$relative_path" ]]; then  # Check if relative_path is not empty.
         local dir_name=$(basename "$dir")
         echo "- [$dir_name](./$relative_path/index.html)" >> "$OUTPUT_DIR/index.md"
     fi
 }
 
-# Start processing from the root directory
-process_directory "$ROOT_DIR"
+# Start processing from the root directory, skipping src/main/java itself.
+for dir in $ROOT_DIR/*; do 
+  if [[ -d $dir ]]; then 
+      process_directory "$dir"
+  fi 
+done
 
 # Create the mkdocs.yml file outside the docs directory with theme settings.
 cat <<EOF > mkdocs.yml
@@ -127,8 +136,8 @@ add_nav_links() {
     for java_file in "$dir"/*.java; do
         if [[ -f "$java_file" ]]; then
             local file_name=$(basename "$java_file")
-            local link_name="${file_name%.java}.md"
-            echo "  - ${link_name%.md}: $OUTPUT_DIR/$relative_path/$link_name" >> mkdocs.yml  # Remove .md from label.
+            local link_name="${file_name%.java}.html"  # Change .md to .html here.
+            echo "  - ${file_name%.java}: ${relative_path//\//\/}$link_name" >> mkdocs.yml  # Remove docs prefix and add .html extension.
         fi
     done
 
@@ -147,10 +156,14 @@ add_nav_links() {
     
 }
 
-# Add links to mkdocs.yml from the root directory.
-add_nav_links "$ROOT_DIR"
+# Add links to mkdocs.yml from each subdirectory of ROOT_DIR.
+for dir in $ROOT_DIR/*; do 
+  if [[ -d $dir ]]; then 
+      add_nav_links "$dir"
+  fi 
+done
 
-# Correct specific paths in mkdocs.yml.
-sed -i 's|docs/src/main/java/docs|docs|g' mkdocs.yml  # Fix specific paths.
+# Correct specific paths in mkdocs.yml (make sure this is valid).
+sed -i '' 's|docs/src/main/java/docs|docs|g' mkdocs.yml || true 
 
 echo "Generated mkdocs.yml for MkDocs."
