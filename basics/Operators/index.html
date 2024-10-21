@@ -875,27 +875,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../statements/for" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    For
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../statements/if" class="md-nav__link">
         
   
@@ -958,8 +937,110 @@
   
   
   
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7_5" id="__nav_7_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Loop
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Loop
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../statements/while" class="md-nav__link">
+      <a href="../statements/loop/for" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements/loop" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements/loop/intro" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements/loop/while" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -968,6 +1049,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2031,38 +2120,44 @@
 </tr>
 </tbody>
 </table>
+<h4 id="post-incrementdecrement">Post-Increment/Decrement</h4>
+<p>Post-Increment (x++): The current value of x is used in the expression, and then x is incremented by 1.
+Post-Decrement (x--): The current value of x is used in the expression, and then x is decremented by 1.</p>
+<h4 id="pre-incrementdecrement">Pre-Increment/Decrement</h4>
+<p>Pre-Increment (++x): x is incremented by 1 first, and then the new value of x is used in the expression.
+Pre-Decrement (--x): x is decremented by 1 first, and then the new value of x is used in the expression.</p>
 <h3 id="assignment-operators">Assignment Operators</h3>
 <p>Assignment operators are used to assign values to variables.
-| Operator | Example  | Same As       |
-|----------|----------|---------------|
-| =        | x = 5    | x = 5         |
-| +=       | x += 3   | x = x + 3     |
-| -=       | x -= 3   | x = x - 3     |
-| <em>=       | x </em>= 3   | x = x * 3     |
-| |=       | x /= 3   | x = x / 3     |
-| %=       | x %= 3   | x = x % 3     |
-| &amp;=       | x &amp;= 3   | x = x &amp; 3     |
-| |=       | x |= 3   | x = x | 3     |
-| ^=       | x ^= 3   | x = x ^ 3     |
-| &gt;&gt;=      | x &gt;&gt;= 3  | x = x &gt;&gt; 3    |
-| &lt;&lt;=      | x &lt;&lt;= 3  | x = x &lt;&lt; 3    |</p>
+| Operator Name         | Operator | Example   | Same As       |
+|-----------------------|----------|-----------|---------------|
+| Assignment            | =        | x = 5     | x = 5         |
+| Addition Assignment    | +=       | x += 3    | x = x + 3     |
+| Subtraction Assignment | -=       | x -= 3    | x = x - 3     |
+| Multiplication Assignment | <em>=    | x </em>= 3    | x = x * 3     |
+| Division Assignment    | /=       | x /= 3    | x = x / 3     |
+| Modulus Assignment     | %=       | x %= 3    | x = x % 3     |
+| Bitwise AND Assignment | &amp;=       | x &amp;= 3    | x = x &amp; 3     |
+| Bitwise OR Assignment  | |=      | x |= 3   | x = x | 3    |
+| Bitwise XOR Assignment | ^=       | x ^= 3    | x = x ^ 3     |
+| Right Shift Assignment | &gt;&gt;=      | x &gt;&gt;= 3   | x = x &gt;&gt; 3    |
+| Left Shift Assignment  | &lt;&lt;=      | x &lt;&lt;= 3   | x = x &lt;&lt; 3    |</p>
 <h3 id="comparison-operators">Comparison Operators</h3>
 <p>Comparison operators are used to compare two values.
-| Operator | Name                         | Example  |
-|----------|------------------------------|----------|
-| ==       | Equal to                     | x == y   |
-| !=       | Not equal                    | x != y   |
-| &gt;        | Greater than                 | x &gt; y    |
-| &lt;        | Less than                    | x &lt; y    |
-| &gt;=       | Greater than or equal to     | x &gt;= y   |
-| &lt;=       | Less than or equal to        | x &lt;= y   |</p>
+| Name                         | Operator | Example  |
+|------------------------------|----------|----------|
+| Equal to                     | ==       | x == y   |
+| Not equal                    | !=       | x != y   |
+| Greater than                 | &gt;        | x &gt; y    |
+| Less than                    | &lt;        | x &lt; y    |
+| Greater than or equal to     | &gt;=       | x &gt;= y   |
+| Less than or equal to        | &lt;=       | x &lt;= y   |</p>
 <h3 id="logical-operators">Logical Operators</h3>
 <p>Logical operators are used to determine the logic between variables or values.
-| Operator | Name         | Description                                   | Example                     |
-|----------|--------------|-----------------------------------------------|-----------------------------|
-| &amp;&amp;       | Logical and  | Returns true if both statements are true      | x &lt; 5 &amp;&amp; x &lt; 10             |
-| ||       | Logical or   | Returns true if one of the statements is true | x &lt; 5 || x &lt; 4              |
-| !        | Logical not  | Reverses the result, returns false if true    | !(x &lt; 5 &amp;&amp; x &lt; 10)          |</p>
+| Name         | Operator | Example                     | Alternative | Description                                   |
+|--------------|----------|-----------------------------|-------------|-----------------------------------------------|
+| Logical and  | &amp;&amp;       | x &lt; 5 &amp;&amp; x &lt; 10             | AND         | Returns true if both statements are true      |
+| Logical or   | ||     | x &lt; 5 || x &lt; 4              | OR          | Returns true if one of the statements is true |
+| Logical not  | !        | !(x &lt; 5 &amp;&amp; x &lt; 10)          | NOT         | Reverses the result, returns false if true    |</p>
 <ul>
 <li><a href="arithmetic">arithmetic.md</a></li>
 <li><a href="assignment">assignment.md</a></li>

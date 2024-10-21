@@ -865,27 +865,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/statements/for" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    For
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../basics/statements/if" class="md-nav__link">
         
   
@@ -948,8 +927,110 @@
   
   
   
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7_5" id="__nav_7_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Loop
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Loop
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../basics/statements/while" class="md-nav__link">
+      <a href="../../basics/statements/loop/for" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/statements/loop" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/statements/loop/intro" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/statements/loop/while" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -958,6 +1039,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1972,7 +2061,7 @@
 <th>Category</th>
 <th>Method</th>
 <th>Description</th>
-<th>Return Type</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
@@ -1980,175 +2069,175 @@
 <td><strong>Returns</strong></td>
 <td><code>charAt()</code></td>
 <td>Returns the character at the specified index (position)</td>
-<td><code>char</code></td>
+<td><code>"Hello".charAt(1)</code> returns <code>'e'</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>codePointAt()</code></td>
 <td>Returns the Unicode of the character at the specified index</td>
-<td><code>int</code></td>
+<td><code>"Hello".codePointAt(1)</code> returns <code>101</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>codePointBefore()</code></td>
 <td>Returns the Unicode of the character before the specified index</td>
-<td><code>int</code></td>
+<td><code>"Hello".codePointBefore(1)</code> returns <code>72</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>codePointCount()</code></td>
 <td>Returns the number of Unicode values found in a string.</td>
-<td><code>int</code></td>
+<td><code>"Hello".codePointCount(0, 5)</code> returns <code>5</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>hashCode()</code></td>
 <td>Returns the hash code of a string</td>
-<td><code>int</code></td>
+<td><code>"Hello".hashCode()</code> returns <code>69609650</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>length()</code></td>
 <td>Returns the length of a specified string</td>
-<td><code>int</code></td>
+<td><code>"Hello".length()</code> returns <code>5</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>isEmpty()</code></td>
 <td>Checks whether a string is empty or not</td>
-<td><code>boolean</code></td>
+<td><code>""isEmpty()</code> returns <code>true</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>toCharArray()</code></td>
 <td>Converts this string to a new character array</td>
-<td><code>char[]</code></td>
+<td><code>"Hello".toCharArray()</code> returns <code>['H', 'e', 'l', 'l', 'o']</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>toLowerCase()</code></td>
 <td>Converts a string to lower case letters</td>
-<td><code>String</code></td>
+<td><code>"Hello".toLowerCase()</code> returns <code>"hello"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>toString()</code></td>
 <td>Returns the value of a String object</td>
-<td><code>String</code></td>
+<td><code>String.valueOf(123).toString()</code> returns <code>"123"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>toUpperCase()</code></td>
 <td>Converts a string to upper case letters</td>
-<td><code>String</code></td>
+<td><code>"Hello".toUpperCase()</code> returns <code>"HELLO"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>trim()</code></td>
 <td>Removes whitespace from both ends of a string</td>
-<td><code>String</code></td>
+<td><code>"  Hello  ".trim()</code> returns <code>"Hello"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>valueOf()</code></td>
 <td>Returns the string representation of the specified value</td>
-<td><code>String</code></td>
+<td><code>String.valueOf(123)</code> returns <code>"123"</code></td>
 </tr>
 <tr>
 <td><strong>Compares</strong></td>
 <td><code>compareTo()</code></td>
 <td>Compares two strings lexicographically</td>
-<td><code>int</code></td>
+<td><code>"abc".compareTo("abd")</code> returns <code>-1</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>compareToIgnoreCase()</code></td>
 <td>Compares two strings lexicographically, ignoring case differences</td>
-<td><code>int</code></td>
+<td><code>"abc".compareToIgnoreCase("ABC")</code> returns <code>0</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>equals()</code></td>
 <td>Compares two strings. Returns true if the strings are equal, and false if not</td>
-<td><code>boolean</code></td>
+<td><code>"hello".equals("hello")</code> returns <code>true</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>equalsIgnoreCase()</code></td>
 <td>Compares two strings, ignoring case considerations</td>
-<td><code>boolean</code></td>
+<td><code>"hello".equalsIgnoreCase("HELLO")</code> returns <code>true</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>regionMatches()</code></td>
 <td>Tests if two string regions are equal</td>
-<td><code>boolean</code></td>
+<td><code>"abcdef".regionMatches(0, "abc", 0, 3)</code> returns <code>true</code></td>
 </tr>
 <tr>
 <td><strong>Searches</strong></td>
 <td><code>contains()</code></td>
 <td>Checks whether a string contains a sequence of characters</td>
-<td><code>boolean</code></td>
+<td><code>"Hello".contains("ell")</code> returns <code>true</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>indexOf()</code></td>
 <td>Returns the position of the first found occurrence of specified characters in a string</td>
-<td><code>int</code></td>
+<td><code>"Hello".indexOf("l")</code> returns <code>2</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>lastIndexOf()</code></td>
 <td>Returns the position of the last found occurrence of specified characters in a string</td>
-<td><code>int</code></td>
+<td><code>"Hello".lastIndexOf("l")</code> returns <code>3</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>matches()</code></td>
 <td>Searches a string for a match against a regular expression, and returns the matches</td>
-<td><code>boolean</code></td>
+<td><code>"abc123".matches(".*\\d.*")</code> returns <code>true</code></td>
 </tr>
 <tr>
 <td><strong>Adds</strong></td>
 <td><code>concat()</code></td>
 <td>Appends a string to the end of another string</td>
-<td><code>String</code></td>
+<td><code>"Hello".concat(" World")</code> returns <code>"Hello World"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>join()</code></td>
 <td>Joins one or more strings with a specified separator</td>
-<td><code>String</code></td>
+<td><code>String.join(", ", "A", "B", "C")</code> returns <code>"A, B, C"</code></td>
 </tr>
 <tr>
 <td><strong>Removes</strong></td>
 <td><code>replace()</code></td>
 <td>Searches a string for a specified value, and returns a new string where the specified values are replaced</td>
-<td><code>String</code></td>
+<td><code>"Hello".replace("l", "p")</code> returns <code>"Heppo"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>replaceAll()</code></td>
 <td>Replaces each substring of this string that matches the given regular expression with the given replacement</td>
-<td><code>String</code></td>
+<td><code>"Hello".replaceAll("l", "p")</code> returns <code>"Heppo"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>replaceFirst()</code></td>
 <td>Replaces the first occurrence of a substring that matches the given regular expression with the given replacement</td>
-<td><code>String</code></td>
+<td><code>"Hello".replaceFirst("l", "p")</code> returns <code>"Heplo"</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>split()</code></td>
 <td>Splits a string into an array of substrings</td>
-<td><code>String[]</code></td>
+<td><code>"A,B,C".split(",")</code> returns <code>["A", "B", "C"]</code></td>
 </tr>
 <tr>
 <td></td>
 <td><code>subSequence()</code></td>
 <td>Returns a new character sequence that is a subsequence of this sequence</td>
-<td><code>CharSequence</code></td>
+<td><code>"Hello".subSequence(1, 4)</code> returns <code>"ell"</code></td>
 </tr>
 </tbody>
 </table>

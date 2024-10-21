@@ -910,27 +910,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../statements/for" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    For
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../statements/if" class="md-nav__link">
         
   
@@ -993,8 +972,110 @@
   
   
   
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7_5" id="__nav_7_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Loop
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Loop
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../statements/while" class="md-nav__link">
+      <a href="../../statements/loop/for" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statements/loop" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statements/loop/intro" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statements/loop/while" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1003,6 +1084,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2021,50 +2110,50 @@
 public class Assignment {
   public static void main(String[] args) {
     int x = 5; // Assignment operator (=)
-    System.out.println(&quot;x = &quot; + x); // Output: 5
+    System.out.println(&quot;x = &quot; + x); 
 
     // Addition assignment (+=)
     x += 3;
-    System.out.println(&quot;5 += 3: &quot; + x); // Output: 8
+    System.out.println(&quot;5 += 3 should returns 8 and x is &quot; + x); 
 
     // Subtraction assignment (-=)
     x -= 2;
-    System.out.println(&quot;8 -= 2: &quot; + x); // Output: 6
+    System.out.println(&quot;8 -= 2 should returns 6 and x is: &quot; + x); 
 
     // Multiplication assignment (*=)
     x *= 4;
-    System.out.println(&quot;6 *= 4: &quot; + x); // Output: 24
+    System.out.println(&quot;6 *= 4 should returns 24 and x is: &quot; + x); 
 
     // Division assignment (/=)
     x /= 3;
-    System.out.println(&quot;24 /= 3: &quot; + x); // Output: 8
+    System.out.println(&quot;24 /= 3 should returns 8 and x is &quot; + x); 
 
     // Modulus assignment (%=)
     x %= 5;
-    System.out.println(&quot;8 %= 5: &quot; + x); // Output: 3
+    System.out.println(&quot;8 %= 5 should returns 3 and x is &quot; + x); 
 
     // Bitwise AND assignment (&amp;=)
     x=3; // Binary of 3: 011
     x &amp;= 2; // 10 (binary for 2)
-    System.out.println(&quot;3 &amp;= 2: &quot; + x); // Output: 2
+    System.out.println(&quot;3 &amp;= 2 should returns 2 and x is &quot; + x); 
 
     // Bitwise OR assignment (|=)
     x |= 1; // Equivalent to: x = x | 1
-    System.out.println(&quot;x |= 1: &quot; + x); // Output: 3
+    System.out.println(&quot;x |= 1 should returns 3 and x is &quot; + x); 
 
     // Bitwise XOR assignment (^=)
     x ^= 3; // Equivalent to: x = x ^ 3
-    System.out.println(&quot;x ^= 3: &quot; + x); // Output: 0
+    System.out.println(&quot;x ^= 3 should returns 0 and x is &quot; + x); 
 
     // Right shift assignment (&gt;&gt;=)
     x = 8; // Binary: 1000
     x &gt;&gt;= 2; // Shift right by 2 positions
-            // Result: 0010 (2 in decimal)
-    System.out.println(&quot;x &gt;&gt;= 2: &quot; + x); // Output: 2
+            // Result: 0010 (2 in decimal
+    System.out.println(&quot;x &gt;&gt;= 2 should returns 2 and x is &quot; + x);  
 
     // Left shift assignment (&lt;&lt;=)
     x &lt;&lt;= 3; // Equivalent to: x = x &lt;&lt; 3
-    System.out.println(&quot;x &lt;&lt;= 3: &quot; + x); // Output: 16
+    System.out.println(&quot;x &lt;&lt;= 3 should returns 16 and x is &quot; + x); 
   }
 }
 
