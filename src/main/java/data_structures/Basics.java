@@ -1,5 +1,5 @@
 package data_structures;
 
-public class BasicDS {
+public class Basics {
   
 }
