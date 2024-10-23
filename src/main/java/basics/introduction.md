@@ -10,10 +10,12 @@
 
 # Things you should know
 1. Mostly Return type will come before the name.
+
 ```
 void main(String[] args) {
 return main(return type paramName) {}
 ```
+
 1. you can check your java compiler version by `javac -version`
 1. you can check your java version by `java -version`
 1. First compile your java code by `javac -verbose basics/Basics.java`, After compilation, this will generate java.class file along with package and basic statements.
