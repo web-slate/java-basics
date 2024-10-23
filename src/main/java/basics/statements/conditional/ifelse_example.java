@@ -1,7 +1,7 @@
-package basics.statements;
+package basics.statements.conditional;
 
 //Else statement displays only when if statement is false
-public class IfElse{
+public class ifelse_example{
   public static void main(String[] args) {
     int a = 10;
     int b = 5;
@@ -14,4 +14,4 @@ public class IfElse{
   }
 }
 
-//javac basics/statements/IfElse.java && java basics.statements.IfElse
+//javac basics/statements/conditional/ifelse_example.java && java basics.statements.conditional.ifelse_example

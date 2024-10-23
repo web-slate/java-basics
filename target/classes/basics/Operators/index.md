@@ -31,6 +31,7 @@ Pre-Decrement (--x): x is decremented by 1 first, and then the new value of x is
 
 ### Assignment Operators
 Assignment operators are used to assign values to variables.
+
 | Operator Name         | Operator | Example   | Same As       |
 |-----------------------|----------|-----------|---------------|
 | Assignment            | =        | x = 5     | x = 5         |

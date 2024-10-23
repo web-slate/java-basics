@@ -1,5 +1,5 @@
 package basics.statements.loop;
-public class For{
+public class for_examples{
   public static void main(String[] args) {
     //Printing string for 5 times using for loop
   for(int i=1;i<=5;i=i+1){
@@ -14,4 +14,4 @@ public class For{
   }
 }
 
-//javac basics/statements/loop/For.java && java basics.statements.loop.For
+//javac basics/statements/loop/for_examples.java && java basics.statements.loop.for_examples
