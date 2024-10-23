@@ -47,6 +47,7 @@ Assignment operators are used to assign values to variables.
 
 ### Comparison Operators
 Comparison operators are used to compare two values.
+
 | Name                         | Operator | Example  |
 |------------------------------|----------|----------|
 | Equal to                     | ==       | x == y   |
@@ -58,6 +59,7 @@ Comparison operators are used to compare two values.
 
 ### Logical Operators
 Logical operators are used to determine the logic between variables or values.
+
 | Name         | Operator | Example                     | Alternative | Description                                   |
 |--------------|----------|-----------------------------|-------------|-----------------------------------------------|
 | Logical and  | &&       | x < 5 && x < 10             | AND         | Returns true if both statements are true      |

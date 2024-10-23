@@ -1,4 +1,4 @@
-package data_types.primitive_datatype;
+package data_types.primitive_data_type;
 
 public class IntegerTypes {
   public static void main(String[] args) {
