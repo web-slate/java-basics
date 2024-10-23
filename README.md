@@ -48,3 +48,13 @@ mvn dependency:purge-local-repository
 mvn dependency:resolve
 mvn install
 ```
+
+## Local Setup
+
+```
+python3 -m pip install --upgrade pip
+pip install mkdocs mkdocs-material mkdocs-gen-nav-plugin mkdocs-awesome-pages-plugin
+chmod +x ./generate_docs.sh
+./generate_docs.sh
+mkdocs serve
+```

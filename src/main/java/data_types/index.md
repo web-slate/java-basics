@@ -6,6 +6,7 @@
   - Primitive types are predefined (already defined) in Java. 
   - A primitive type always has a value.
   - A primitive type starts with a lowercase letter.
+
 1. **Integer Types**
    1. byte
    1. short
