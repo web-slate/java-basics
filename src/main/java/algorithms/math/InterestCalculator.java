@@ -2,18 +2,20 @@ package algorithms.math;
 
 import java.util.Scanner;
 
-public class IntrestCalculator {
+public class InterestCalculator {
   public static void main(String args[]) throws Exception {
-    int a;
-    double b, c;
+    int accountID;
+    double balance;
+    double interestRate;
+
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the Account ID");
-    a = sc.nextInt();
+    accountID = sc.nextInt();
     System.out.println("Enter the Balance");
-    b = sc.nextDouble();
+    balance = sc.nextDouble();
     System.out.println("Enter the Intrest Rate");
-    c = sc.nextDouble();
-    Account account = new Account(a, b, c);
+    interestRate = sc.nextDouble();
+    Account account = new Account(accountID, balance, interestRate);
     System.out.println("Enter the Year");
     int noOfYear;
     noOfYear = sc.nextInt();
@@ -64,4 +66,5 @@ class Account {
 }
 
 // Compile and Run the below command.
-// javac algorithms/math/IntrestCalculator.java && java algorithms.math.IntrestCalculator
+// javac algorithms/math/InterestCalculator.java && java
+// algorithms.math.InterestCalculator
