@@ -1,14 +1,14 @@
-# Introduction
+## Introduction
 
 1. Java programming language created in 1995.
 1. Owned by Oracle, and more than 3 billion devices run Java.
 
-# Why Use Java?
+## Why Use Java?
 
 1. Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)
 1. Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
 
-# Things you should know
+## Things you should know
 1. Mostly Return type will come before the name.
 
 ```
@@ -25,4 +25,4 @@ return main(return type paramName) {}
 1. You should also note that each code statement must end with a semicolon (;).
 1. Text must be wrapped inside double quotations marks "". `System.out.println("Java Basics ");`
 1. You can use the `+` character for concatenation to add a variable to another variable:
-1. Variable Names can also begin with "$" and "_"
+1. Variable Names can also begin with "$" and "_".

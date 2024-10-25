@@ -144,6 +144,10 @@ plugins:
   - search
   - gen_nav:
       enabled: true
+  - mkdocs-nav-weight:
+      section_renamed: false  # Use folder names for sections by default.
+      index_weight: -10        # Weight value for index files.
+      reverse: false           # Sort nav by weight from largest to 
 
 nav:
   - Basics: basics/introduction.md               # Link to Basics section

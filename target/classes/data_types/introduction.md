@@ -8,16 +8,16 @@
   - A primitive type starts with a lowercase letter.
 
 1. **Integer Types**
-   1. byte
-   1. short
-   1. int
-   1. long
+    1. byte
+    1. short
+    1. int
+    1. long
 1. **Floating Point Types**
-   1. float
-   1. double 
+    1. float
+    1. double 
 1. **Other Types**
-   1. boolean 
-   1. char
+    1. boolean 
+    1. char
 
 ### Below is the table for all Primitive Data Types.
 
@@ -48,13 +48,18 @@ System.out.println(num);
  - The range of integer data types such as byte, short, int, and long is determined by the number of bits allocated for each type and the way these bits are used to represent signed integers in binary.
  - The ranges are derived from the number of bits and the method of two's complement representation
  - Since two's complement representation allocates one bit for the sign, it allows for an extra negative value compared to positive values. This is why, for example, an 8-bit byte can represent from -128 to 127 (128 negative values including zero).
-## Four Non-Primitive Data Types
+
+### Four Non-Primitive Data Types
  - Non-primitive types are created by the programmer and is not defined by Java (except for String).
  - Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
  - non-primitive types can be null.
  - non-primitive types starts with an uppercase letter.
+
 1. **String**
-   1. The String object has methods that are used to perform certain operations on strings. 
+    1. The String object has methods that are used to perform certain operations on strings. 
 1. **Array**
+    1. The Array notes goes here. 
 1. **Class**
+    1. The Class notes goes here. 
 1. **Interface**
+    1. The Interface notes goes here. 
