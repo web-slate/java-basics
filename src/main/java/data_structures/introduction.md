@@ -2,106 +2,48 @@
 - A data structure is a way to store and organize  data.
 - Data structures give us the possibility to manage large amounts of data efficiently for uses such as large databases and internet indexing services
 
-## Two different type of DataStructure
-**Primitive Data Structures** are basic data structures provided by programming languages to represent single values, such as integers, floating-point numbers, characters, and booleans.
+# Data Structure in Java
 
-**Abstract Data Structures** are higher-level data structures that are built using primitive data types and provide more complex and specialized operations. Some common examples of abstract data structures include arrays, linked lists, stacks, queues, trees, and graphs.
+| Standard Data Structure | Implementation Note or Java Equivalent                |
+|-------------------------|-------------------------------------------------------|
+| Array                   | Implemented as `Array` or `Array[]` in Java           |
+| Stack                   | `Stack` class in `java.util.Stack`                    |
+| Queue                   | `Queue` interface implemented by `LinkedList` or `ArrayDeque` in `java.util` |
+| Priority Queue          | `PriorityQueue` class in `java.util.PriorityQueue`    |
+| Set                     | `Set` interface implemented by `HashSet`, `TreeSet`, etc. |
+| Linked List             | `LinkedList` class in `java.util.LinkedList`          |
+| Doubly Linked List      | Can use `LinkedList`, or implement with custom nodes containing next and previous pointers |
+| Circular Linked List    | No native type; can be implemented with custom nodes where the last node links to the first |
+| Skip List               | No native type; typically implemented using custom nodes for efficient search |
+| Hash Map                | `HashMap` class in `java.util.HashMap`                |
+| Heap                    | Can use `PriorityQueue` for min-heap; max-heap requires custom comparator |
+| Trie                    | No native type; can be implemented using nodes with a `Map<Character, TrieNode>` for children |
+| Binary Tree             | No native type; custom class with nodes having left and right children |
+| Binary Search Tree      | No native type; custom binary tree with ordered insertion and deletion |
+| B-Tree                  | No native type; used in databases; can be implemented with classes allowing multiple children |
+| Red-Black Tree          | Implemented as `TreeMap` or `TreeSet`, or can be implemented with custom balancing logic |
+| AVL Tree                | No native type; can be implemented with custom balancing based on node heights |
+| Graph                   | No native type; can be implemented using adjacency lists (`Map<Vertex, List<Vertex>>`) or adjacency matrix |
 
-### Basic Data Structures to Learn
-- Arrays
-- Linked List
-- Stack
-- Queue
-- HashMap/HashTable
-- Trees (Binary Tree, Binary Search Tree)
-- Graphs
+# Data Structure Types in Java
 
-#### Arrays
-An Array is a fixed-size data structure that holds elements of the same type in a contiguous memory location.
+## Linear Data Structures
 
-```java
-int[] arr = new int[5]; // Declare an array of integers
-arr[0] = 10;            // Assign a value
-```
-#### Linked List
-A Linked List is a linear data structure where each element is a separate object called a "node". Each node contains the data and a reference to the next node.
+| Data Structure | Types                      | Operation Types               | Real-time Examples                            |
+|----------------|----------------------------|--------------------------------|-----------------------------------------------|
+| Array          | Fixed-size, Dynamic Array  | Access, Insert, Delete        | Days in a week; Temperature readings          |
+| Linked List    | Single, Doubly, Circular   | Access, Insert, Delete        | Music playlist; Treasure hunt clues           |
+| Stack          | Array-based, Linked List   | Push, Pop, Peek               | Browser history; Undo functionality           |
+| Queue          | Simple, Circular, Priority | Enqueue, Dequeue, Peek        | Bank line; Call center queue                  |
 
-##### Types of Linked Lists:
-- Singly Linked List: Each node points to the next node.
-- Doubly Linked List: Each node points to both the next and previous nodes
-- Circular Linked List
-- Doubly Circular Linked List
+## Non-Linear Data Structures
 
-```java
-class Node {
-    int data;
-    Node next;
+| Data Structure | Types                        | Operation Types               | Real-time Examples                            |
+|----------------|------------------------------|--------------------------------|-----------------------------------------------|
+| Tree           | Binary, AVL, Red-Black       | Insert, Delete, Traversal     | Org charts; Family tree                       |
+| Graph          | Directed, Undirected         | Add/Remove Vertex/Edge, Search| Road network; Social networks                 |
+| Heap           | Min, Max, Fibonacci          | Insert, Delete, Find Max/Min  | Task scheduling; Top elements selection       |
+| Hash Table     | Chaining, Open Addressing    | Insert, Delete, Access        | Book indexing; User data lookup               |
+| Set            | HashSet, TreeSet             | Add, Remove, Contains         | Unique tags; Removing duplicates              |
+| Trie           | Basic, Radix, Suffix         | Insert, Search, Delete        | Autocomplete; Spell checking                  |
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
-
-class LinkedList {
-    Node head;
-    
-    public void insert(int data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-        } else {
-            Node temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
-            }
-            temp.next = newNode;
-        }
-    }
-}
-```
-
-#### Stack
-A Stack is a LIFO (Last In First Out) data structure. The last element added is the first to be removed.
-
-```java
-import java.util.Stack;
-
-Stack<Integer> stack = new Stack<>();
-stack.push(10);  // Push element onto stack
-stack.pop();     // Pop element from stack
-
-```
-
-#### Queue
-A Queue is a FIFO (First In First Out) data structure. The first element added is the first to be removed.
-
-```java
-import java.util.LinkedList;
-import java.util.Queue;
-
-Queue<Integer> queue = new LinkedList<>();
-queue.add(10);    // Enqueue element
-queue.remove();   // Dequeue element
-```
-
-#### HashMap
-A HashMap is a collection that stores data in key-value pairs. It uses hashing to provide constant time complexity for basic operations like get and put.
-
-```java
-import java.util.HashMap;
-
-HashMap<String, Integer> map = new HashMap<>();
-map.put("Apple", 1);  // Insert key-value pair
-map.get("Apple");     // Retrieve value
-
-```
-#### Trees
-A Tree is a hierarchical data structure where each node has a value and children. The most common type of tree is a Binary Tree, where each node has at most two children.
-
-**Types of Trees:**
-- Binary Search Tree (BST): A binary tree where the left child is smaller than the parent node, and the right child is larger.
-- AVL Tree: A self-balancing binary search tree.
-
-#### Graphs
-A Graph is a collection of nodes (called vertices) and edges connecting pairs of nodes. Graphs can be directed or undirected.

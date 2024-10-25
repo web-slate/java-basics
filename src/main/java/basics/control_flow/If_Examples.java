@@ -1,7 +1,7 @@
-package basics.statements.conditional;
+package basics.control_flow;
 
 //Use if to specify a block of code to be executed, if a specified condition is true
-public class if_example{
+public class If_Examples {
   public static void main(String[] args) {
     int a = 10;
     int b = 5;
@@ -14,4 +14,4 @@ public class if_example{
   }
 }
 
-// javac basics/statements/conditional/if_example.java && java basics.statements.conditional.if_example
+// javac basics/statements/If_Examples.java && java basics.statements.If_Examples

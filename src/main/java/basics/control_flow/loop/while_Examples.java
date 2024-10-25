@@ -1,5 +1,5 @@
-package basics.statements.loop;
-public class while_examples{
+package basics.control_flow.loop;
+public class While_Examples{
   //Print the number between 1-100 that are divisible by 3 and 5
   public static void main(String[] args) {
     int i = 1;
@@ -12,4 +12,4 @@ public class while_examples{
     }
 }
 }
-//javac basics/statements/loop/while_examples.java && java basics.statements.loop.while_examples
+//javac basics/statements/loop/While_Examples.java && java basics.statements.loop.While_Examples

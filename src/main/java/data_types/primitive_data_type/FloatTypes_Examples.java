@@ -1,6 +1,6 @@
 package data_types.primitive_data_type;
 
-public class FloatTypes {
+public class FloatTypes_Examples {
   public static void main(String[] args) {
     float a = 5.15f; // Float should end with value f
     double b = 12E4d; // Double should end with value d.
@@ -9,4 +9,4 @@ public class FloatTypes {
     System.out.println("This number is stored in Double:" + b);
   }
 }
-//javac data_types/primitive_datatype/FloatTypes.java && java data_types.primitive_datatype.FloatTypes
+//javac data_types/primitive_datatype/FloatTypes_Examples.java && java data_types.primitive_datatype.FloatTypes_Examples

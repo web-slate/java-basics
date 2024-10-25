@@ -1,6 +1,6 @@
 package data_types.String; 
 
-public class Strings { 
+public class Strings_Examples { 
     public static void main(String[] args) {
         
         String text = "My Favourite Program is Java"; 
@@ -14,4 +14,4 @@ public class Strings {
 
 
  //Execute the below command
-// javac data_types/String/Strings.java && java data_types.String.Strings
+// javac data_types/String/Strings_Examples.java && java data_types.String.Strings_Examples

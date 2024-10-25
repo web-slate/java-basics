@@ -1,6 +1,6 @@
 package basics.variables;
 
-public class BasicVariables {
+public class BasicVariables_Examples {
   public static void main(String[] args) {
     String title = "Basic String Variable";
     System.out.println(title);
