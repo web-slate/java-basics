@@ -1,6 +1,6 @@
 package basics.variables;
 
-public class BasicVariables_Examples {
+public class BasicVariablesExamples {
   public static void main(String[] args) {
     String title = "Basic String Variable";
     System.out.println(title);
@@ -19,4 +19,4 @@ public class BasicVariables_Examples {
   }
 }
 
-// javac basics/variables/BasicVariables.java && java basics.variables.BasicVariables
+// javac basics/variables/BasicVariablesExamples.java && java basics.variables.BasicVariablesExamples

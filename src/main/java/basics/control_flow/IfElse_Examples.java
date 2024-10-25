@@ -14,4 +14,4 @@ public class IfElse_Examples{
   }
 }
 
-//javac basics/statements/IfElse_Examples.java && java basics.statements.IfElse_Examples
+//javac basics/control_flow/IfElse_Examples.java && java basics.control_flow.IfElse_Examples

@@ -1,6 +1,6 @@
 package data_types;
 
-public class DataTypes_Examples {
+public class DataTypesExamples {
   public static void main(String[] args) {
     System.out.println("Below is Sachin ODI Stats");
     String fullName = "Sachin Ramesh Tendulkar";
@@ -19,5 +19,5 @@ public class DataTypes_Examples {
 
 /**
  * Execute below command.
-    javac basics/DataTypes_Examples.java && java basics.DataTypes_Examples
+    javac basics/DataTypesExamples.java && java basics.DataTypesExamples
  */

@@ -1,6 +1,6 @@
-package basics.operators;
+package basics.Operators;
 
-public class Assignment_Examples {
+public class AssignmentExamples {
   public static void main(String[] args) {
     int x = 5; // Assignment operator (=)
     System.out.println("x = " + x); 
@@ -50,4 +50,4 @@ public class Assignment_Examples {
   }
 }
 
-// javac basics/Operators/Assignment_Examples.java && java basics.Operators.Assignment_Examples
+// javac basics/Operators/AssignmentExamples.java && java basics.Operators.AssignmentExamples

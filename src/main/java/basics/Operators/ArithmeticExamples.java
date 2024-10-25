@@ -1,6 +1,6 @@
-package basics.operators;
+package basics.Operators;
 
-public class Arithmetic_Examples {
+public class ArithmeticExamples {
   public static void main(String[] args) {
     int a = 150;
     int b = 100;
@@ -14,4 +14,4 @@ public class Arithmetic_Examples {
   }
 
 }
-// javac basics/Operators/Arithmetic_Examples.java &java basics.Operators.Arithmetic_Examples
+// javac basics/Operators/ArithmeticExamples.java &java basics.Operators.ArithmeticExamples
