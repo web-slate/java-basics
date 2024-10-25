@@ -1,4 +1,4 @@
-package basics.statements;
+package basics.control_flow;
 
 public class ElseIf {
   public static void main(String[] args) {

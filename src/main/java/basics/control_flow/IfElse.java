@@ -1,4 +1,4 @@
-package basics.statements;
+package basics.control_flow;
 
 //Else statement displays only when if statement is false
 public class IfElse{

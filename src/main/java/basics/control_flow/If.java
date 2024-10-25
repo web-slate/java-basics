@@ -1,4 +1,4 @@
-package basics.statements;
+package basics.control_flow;
 
 //Use if to specify a block of code to be executed, if a specified condition is true
 public class If {

@@ -1,4 +1,4 @@
-package basics.statements.loop;
+package basics.control_flow.loop;
 public class For{
   public static void main(String[] args) {
     //Printing string for 5 times using for loop
