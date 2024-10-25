@@ -1,6 +1,6 @@
 package data_types;
 
-public class BasicDataType {
+public class BasicDataTypeExamples {
   public static void main(String[] args) {
     int dataTypes = 5;
     String title = " Basic Data Types";
@@ -18,4 +18,4 @@ public class BasicDataType {
 
 
  //Execute the below command
-// javac data_types/BasicDataType.java && java data_types.BasicDataType
+// javac data_types/BasicDataTypeExamples.java && java data_types.BasicDataTypeExamples

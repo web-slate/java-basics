@@ -1,6 +1,6 @@
-package basics.operators;
+package basics.Operators;
 
-public class Comparision {
+public class ComparisionExamples {
   public static void main(String[] args) {
     int a = 10;
     int b = 20;
@@ -13,4 +13,4 @@ public class Comparision {
     System.out.println("30 is greater than 20: " + (c > b));// returns True
   }
 }
-// javac basics/Operators/Comparision.java && java basics.Operators.Comparision
+// javac basics/Operators/ComparisionExamples.java && java basics.Operators.ComparisionExamples

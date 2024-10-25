@@ -1,5 +1,5 @@
 package data_types.math;
 
-public class Math {
+public class MathExamples {
   
 }

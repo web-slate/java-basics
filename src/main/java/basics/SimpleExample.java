@@ -7,4 +7,4 @@ public class SimpleExample {
   }
 }
 
-// javac basics/Basics.java && java basics.Basics hello
+// javac basics/SimpleExample.java && java basics.SimpleExample hello

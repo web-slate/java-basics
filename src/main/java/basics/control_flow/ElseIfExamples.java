@@ -1,6 +1,6 @@
-package basics.statements.conditional;
+package basics.control_flow;
 
-public class elseif_example {
+public class ElseIfExamples {
   public static void main(String[] args) {
     int age = 22;
 
@@ -16,4 +16,4 @@ public class elseif_example {
   }
 }
 
-//javac basics/statements/conditional/elseif_example.java && java basics.statements.conditional.elseif_example
+//javac basics/control_flow/ElseIfExamples.java && java basics.control_flow.ElseIfExamples

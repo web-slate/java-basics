@@ -1,6 +1,6 @@
 package data_types.primitive_data_type;
 
-public class IntegerTypes {
+public class IntegerTypesExamples {
   public static void main(String[] args) {
     byte a = 100; // byte datatype stores number from -128 to 127
     short b = 5000; // The short datatype can store numbers from -32768 to 32767:
@@ -15,4 +15,4 @@ public class IntegerTypes {
 
 }
 
-//javac data_types/primitive_datatype/IntegerTypes.java && java data_types.primitive_datatype.IntegerTypes
+//javac data_types/primitive_datatype/IntegerTypesExamples.java && java data_types.primitive_datatype.IntegerTypesExamples
