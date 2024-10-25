@@ -96,9 +96,12 @@ process_directory() {
     for subdir in "$dir"/*/; do
         if [[ -d "$subdir" ]]; then
             process_directory "$subdir"
-            # Add link to subdirectory in current index.md, linking to index.html.
-            local subdir_name=$(basename "$subdir")
-            echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
+            
+            # Check if the subdirectory has any Java files before adding a link.
+            if compgen -G "$subdir/*.java" > /dev/null || [[ -f "$subdir/index.md" ]]; then
+                local subdir_name=$(basename "$subdir")
+                echo "- [$subdir_name](./$subdir_name/index.html)" >> "$md_file"
+            fi
         fi
     done
 
@@ -132,8 +135,7 @@ theme:
   name: material  # Use a theme that supports sidebar navigation.
   features:
     - navigation.sections  # Enable sections in the sidebar.
-    - navigation.expand  # Automatically expand sections in the sidebar.
-    - navigation.expand  # Automatically expand sections in the sidebar.
+    - navigation.footer  # Enable footer navigation for next/previous links.
     - search.suggest       # Enable search suggestions.
     - search.highlight      # Enable highlighting of search terms.
     - search.share          # Enable sharing of search results.
@@ -144,11 +146,14 @@ plugins:
       enabled: true
 
 nav:
-  - Basics: basics/index.md               # Link to Basics section
-  - Data Types: data_types/index.md        # Link to Data Types section
-  - Data Structures: data_structures/index.md  # Link to Data Structures section
-  - Algorithms: algorithms/index.md         # Link to Algorithms section
-  - OOPs: oops/index.md                     # Link to OOPs section
+  - Basics: basics/introduction.md               # Link to Basics section
+  - Data Types: data_types/introduction.md        # Link to Data Types section
+  - Methods: basics/methods/introduction.md        # Link to Methods section
+  - Recursions: basics/recursions/introduction.md        # Link to Recursion section
+  - Data Structures: data_structures/introduction.md  # Link to Data Structures section
+  - OOPs: oops/introduction.md                     # Link to OOPs section
+  - Algorithms: algorithms/introduction.md         # Link to Algorithms section
+  - Leet Code: leet_code/introduction.md         # Link to Leet Code section
 EOF
 
 # Correct specific paths in mkdocs.yml (make sure this is valid).
