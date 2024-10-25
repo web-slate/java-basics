@@ -1,7 +1,7 @@
 package basics.control_flow;
 
 //Else statement displays only when if statement is false
-public class IfElse_Examples{
+public class IfElseExamples{
   public static void main(String[] args) {
     int a = 10;
     int b = 5;
@@ -14,4 +14,4 @@ public class IfElse_Examples{
   }
 }
 
-//javac basics/control_flow/IfElse_Examples.java && java basics.control_flow.IfElse_Examples
+//javac basics/control_flow/IfElseExamples.java && java basics.control_flow.IfElseExamples
