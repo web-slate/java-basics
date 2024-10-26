@@ -13,6 +13,7 @@ fixedArray[4] = 50;
 ```
 
 1. Accessing is faster in Arrays but searching, adding or removing will be "N" because it works through index.
+1. Java offers additional data structures in the java.util package that behave similarly to arrays
 
 | Operation       | Array  |
 |-----------------|--------|
@@ -20,8 +21,6 @@ fixedArray[4] = 50;
 | Search          | O(n)   |
 | Insert          | O(n)   |
 | Delete          | O(n)   |
-
-1. Java offers additional data structures in the java.util package that behave similarly to arrays
 
 ## Dynamic Size Array - Time Complexity Table
 
@@ -32,7 +31,7 @@ fixedArray[4] = 50;
 1. Let say initial array size is 4 and when array is full (e.g., at capacity of 4), a resize operation occurs:
     1. Double the capacity (e.g., from 4 to 8).
     1. Copy existing elements, taking O(n) time.
-    1. 
+    1. After resizing, the next additions again take O(1) until the next resize.
 
 | Operation       | Time Complexity             |
 |-----------------|-----------------------------|
