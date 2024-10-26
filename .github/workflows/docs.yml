@@ -32,7 +32,7 @@ jobs:
     - name: Install MkDocs
       run: |
         python3 -m pip install --upgrade pip
-        pip install mkdocs mkdocs-material mkdocs-gen-nav-plugin mkdocs-awesome-pages-plugin
+        pip install mkdocs mkdocs-material mkdocs-gen-nav-plugin mkdocs-awesome-pages-plugin pymdown-extensions
 
     - name: Generate Documentation
       run: |

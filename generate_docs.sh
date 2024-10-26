@@ -71,21 +71,36 @@ process_directory() {
         if [[ -f "$java_file" ]]; then
             local file_name=$(basename "$java_file")
             local link_name=$(convert_to_underscore "${file_name%.java}").md  # Convert filename to underscore_case and change extension to .md
-            echo "- [$link_name](./$link_name)" >> "$md_file"
+            
+            # Extract Markdown comments from the Java file
+            local comments=$(awk '/\/\*\*/,/\*\//' "$java_file" | sed 's/\/\*\*//;s/\*\///;s/\* //g' | sed '/^$/d')
 
-            # Create a Markdown file for the Java file with syntax highlighting
+            # Remove multi-line comments from the Java code
+            local code=$(sed '/\/\*\*/,/\*\//d' "$java_file")
+
+            # Create a Markdown file for this Java file with syntax highlighting and comments at the bottom.
             {
-                echo "## $file_name"
+                echo "> File Name: $file_name"
                 echo '```java'
-                cat "$java_file"
+                echo "$code"  # Include the actual code here without comments.
                 echo -e '\n```'
+                echo ""  # Add an empty line before comments
+                
+                # Append extracted comments at the bottom.
+                if [[ -n "$comments" ]]; then
+                    echo "## Problem Description"
+                    echo "$comments"
+                fi
             } > "$output_dir/$link_name"
 
             echo "Markdown file created: $output_dir/$link_name"
+
             java_found=true
+            
+            # Add link to index.md for this Java file's documentation.
+            echo "- [$link_name](./$link_name)" >> "$md_file"
         fi
     done
-
     # Only create index.md if Java files were found
     if ! $java_found; then
         rm "$md_file"  # Remove the empty index file
@@ -144,15 +159,23 @@ plugins:
   - search
   - gen_nav:
       enabled: true
+  - mkdocstrings
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      linenums: true
+  - pymdownx.superfences
+
 nav:
   - Basics: basics/introduction.md               # Link to Basics section
   - Data Types: data_types/introduction.md        # Link to Data Types section
-  - Methods: basics/methods/introduction.md        # Link to Methods section
-  - Recursions: basics/recursions/introduction.md        # Link to Recursion section
+  - Methods: basics/methods/introduction.md       # Link to Methods section
+  - Recursions: basics/recursions/introduction.md  # Link to Recursion section
   - Data Structures: data_structures/introduction.md  # Link to Data Structures section
   - OOPs: oops/introduction.md                     # Link to OOPs section
   - Algorithms: algorithms/introduction.md         # Link to Algorithms section
-  - Leet Code: leet_code/introduction.md         # Link to Leet Code section
+  - Leet Code: leet_code/introduction.md           # Link to Leet Code section
 EOF
 
 # Correct specific paths in mkdocs.yml (make sure this is valid).
