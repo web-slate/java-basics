@@ -14,7 +14,7 @@ public class QuickSolution {
 }
 
 /**
- * javac leet_code/palindrome/QuickSolution.java
- * java leet_code.palindrome.QuickSolution
+ * javac leet_code/move_zeroes/MoveZeroesProblem.java
+ * java leet_code/move_zeroes/MoveZeroesProblem
  */
 
