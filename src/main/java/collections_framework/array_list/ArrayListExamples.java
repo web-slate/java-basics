@@ -15,7 +15,7 @@ public class ArrayListExamples {
     System.out.println("Number at index 1: " + numbers.get(1)); // Outputs 20
 
     System.out.println("Numbers List:");
-    for (Integer number : numbers) {""
+    for (Integer number : numbers) {
       System.out.println(number);
     }
   }
