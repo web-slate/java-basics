@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#linked-list" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2202,6 +2207,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
         
@@ -2212,6 +2230,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linkedlist-methods-in-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkedList Methods in Java
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkedList Methods in Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-descriptions-and-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method Descriptions and Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3694,6 +3764,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linkedlist-methods-in-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkedList Methods in Java
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkedList Methods in Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-descriptions-and-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method Descriptions and Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3708,9 +3821,111 @@
                   
 
 
-  <h1>Introduction</h1>
+<h1 id="linked-list">Linked List</h1>
+<ul>
+<li>The LinkedList class is a collection which can contain many objects of the same type, just like the ArrayList.</li>
+<li>LinkedList stores its items in "containers."</li>
+</ul>
+<h2 id="linkedlist-methods-in-java">LinkedList Methods in Java</h2>
+<p>In many cases, <code>ArrayList</code> is more efficient for accessing random items in the list. However, <code>LinkedList</code> provides several methods for efficient operations, especially when adding or removing elements at the beginning or end of the list.</p>
+<h3 id="method-descriptions-and-examples">Method Descriptions and Examples</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addFirst()</code></td>
+<td>Adds an item to the beginning of the list</td>
+</tr>
+<tr>
+<td><code>addLast()</code></td>
+<td>Adds an item to the end of the list</td>
+</tr>
+<tr>
+<td><code>removeFirst()</code></td>
+<td>Removes an item from the beginning of the list</td>
+</tr>
+<tr>
+<td><code>removeLast()</code></td>
+<td>Removes an item from the end of the list</td>
+</tr>
+<tr>
+<td><code>getFirst()</code></td>
+<td>Gets the item at the beginning of the list</td>
+</tr>
+<tr>
+<td><code>getLast()</code></td>
+<td>Gets the item at the end of the list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-usage">Example Usage</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
 
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LinkedListExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
+<span class="w">        </span><span class="c1">// addFirst() example</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c1">// addLast() example</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c1">// removeFirst() example</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">removeFirst</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c1">// removeLast() example</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">removeLast</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// getFirst() example</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">getFirst</span><span class="p">());</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c1">// getLast() example</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">getLast</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 
 
 
