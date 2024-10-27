@@ -45,7 +45,7 @@ import java.util.Arrays;
 
 public class MoveZeroesProblem {  
   public static void main (String[] args) {
-    int[] nums = {0,1,0,3,12};
+    int[] nums = {1,0,0,3,12};
     System.out.println("Input: " + Arrays.toString(nums));
 
     MoveZeroesProblem moveZeroesProblem = new MoveZeroesProblem();

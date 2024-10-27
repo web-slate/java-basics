@@ -7,11 +7,12 @@ public class FixedArrayExample {
  * 
  * > `listFixedByteArray` is iterating every byte value for each statement.
  * 
+ * > `listFixedIntegerArray` is iterating every non zero integers in the fixed integer array.
  */
 
   public static void main(String[] args) {
     FixedArrayExample fixedArrayExample = new FixedArrayExample();
-    // fixedArrayExample.listFixedByteArray();
+    fixedArrayExample.listFixedByteArray();
     fixedArrayExample.listFixedIntegerArray();
   }
 

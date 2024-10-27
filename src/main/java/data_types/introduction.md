@@ -8,13 +8,13 @@
   - A primitive type starts with a lowercase letter.
 
 1. **Integer Types**
-    1. byte
-    1. short
-    1. int
-    1. long
+    1. byte - it has 3 digits up to 127
+    1. short - it has 5 digits to 32k
+    1. int - it has 10 digits to 2,147,483,647
+    1. long - it has 19 digits up to 9,223,372,036,854,775,807
 1. **Floating Point Types**
-    1. float
-    1. double 
+    1. float - up to 7 decimal digits and end the value with 5.75f.
+    1. double - storing 15 decimal digits and end the value with 19.99d.
 1. **Other Types**
     1. boolean 
     1. char
