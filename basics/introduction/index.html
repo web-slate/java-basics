@@ -280,6 +280,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jdk-tree-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDK Tree Structure.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#things-you-should-know" class="md-nav__link">
     <span class="md-ellipsis">
       Things you should know
@@ -1078,6 +1087,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Operators/interesting" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interesting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Operators/introduction" class="md-nav__link">
         
   
@@ -1587,6 +1617,15 @@
   <a href="#top-20-java-terms-in-october-2024" class="md-nav__link">
     <span class="md-ellipsis">
       Top 20 Java Terms in October 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jdk-tree-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDK Tree Structure.
     </span>
   </a>
   
@@ -3892,6 +3931,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jdk-tree-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDK Tree Structure.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#things-you-should-know" class="md-nav__link">
     <span class="md-ellipsis">
       Things you should know
@@ -4194,26 +4242,91 @@
 </tr>
 </tbody>
 </table>
+<h2 id="jdk-tree-structure">JDK Tree Structure.</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code>JDK (Java Development Kit)
+|
++--- JRE (Java Runtime Environment)
+     |
+     +--- JVM (Java Virtual Machine)
+     |    |
+     |    +--- Just In Time Compiler (JIT)
+     |    |
+     |    +--- Heap, Stack, registry, and Other memory areas
+     |    |
+     |    +--- ...
+     |
+     +--- Java Class Libraries
+     |    |
+     |    +--- java.lang Package
+     |    |
+     |    +--- java.io Package
+     |    |
+     |    +--- java.util Package
+     |    |
+     |    +--- ...
+     |
+     +--- Java Standard Extensions
+          |
+          +--- JavaFX
+          |
+          +--- Java Accessibility
+          |
+          +--- Java Cryptography Extension (JCE)
+          |
+          +--- ...
+</code></pre></div></td></tr></table></div>
 <h2 id="things-you-should-know">Things you should know</h2>
 <ol>
 <li>Mostly Return type will come before the name.</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>void main(String[] args) {
 return main(return type paramName) {}
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>you can check your java compiler version by <code>javac -version</code></li>
-<li>you can check your java version by <code>java -version</code></li>
-<li>First compile your java code by <code>javac -verbose basics/Basics.java</code>, After compilation, this will generate java.class file along with package and basic statements.</li>
-<li>Class name should always start with an <strong>uppercase first letter</strong>. Run your java class after compiled by <code>java basics.Basics</code></li>
-<li>The name of the java file must match the class name.</li>
-<li>Any code inside the main() method will be executed.</li>
-<li>You should also note that each code statement must end with a semicolon (;).</li>
-<li>Text must be wrapped inside double quotations marks "". <code>System.out.println("Java Basics ");</code></li>
-<li>You can use the <code>+</code> character for concatenation to add a variable to another variable:</li>
-<li>Variable Names can also begin with "$" and "_".</li>
-</ol>
+1. JDK for local development machines for coding, compiling, and debugging Java applications. 
+1. JRE (Java Runtime Environment): Needed in production to run compiled Java applications, end-users use the JRE to run Java applications.
+1. The JVM s part of the JRE and is responsible for running .class files (Java bytecode), runtime engine that executes Java bytecode. included in both JDK and JRE.
+1. JVM basically does Bytecode Execution, Memory Management, Platform Independence.
+1. you can check your java compiler version by <code>javac -version</code>
+1. you can check your java version by <code>java -version</code>
+1. First compile your java code by <code>javac -verbose basics/Basics.java</code>, After compilation, this will generate java.class file along with package and basic statements.
+1. Class name should always start with an <strong>uppercase first letter</strong>. Run your java class after compiled by <code>java basics.Basics</code>
+1. The name of the java file must match the class name.
+1. Any code inside the main() method will be executed.
+1. You should also note that each code statement must end with a semicolon (;).
+1. Text must be wrapped inside double quotations marks "". <code>System.out.println("Java Basics ");</code>
+1. You can use the <code>+</code> character for concatenation to add a variable to another variable:
+1. Variable Names can also begin with "$" and "_".</p>
 <h2 id="other-top-java-terms-in-october-2024">Other Top Java Terms in October 2024</h2>
 <table>
 <thead>
