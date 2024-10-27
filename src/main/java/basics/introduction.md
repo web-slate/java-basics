@@ -62,6 +62,42 @@
 | 19 | Serialization | Object persistence mechanism | Converting objects to byte streams for storage/transfer |
 | 20 | Unit Testing | Code testing methodology | Testing individual components using JUnit, TestNG |
 
+## JDK Tree Structure.
+
+```
+JDK (Java Development Kit)
+|
++--- JRE (Java Runtime Environment)
+     |
+     +--- JVM (Java Virtual Machine)
+     |    |
+     |    +--- Just In Time Compiler (JIT)
+     |    |
+     |    +--- Heap, Stack, registry, and Other memory areas
+     |    |
+     |    +--- ...
+     |
+     +--- Java Class Libraries
+     |    |
+     |    +--- java.lang Package
+     |    |
+     |    +--- java.io Package
+     |    |
+     |    +--- java.util Package
+     |    |
+     |    +--- ...
+     |
+     +--- Java Standard Extensions
+          |
+          +--- JavaFX
+          |
+          +--- Java Accessibility
+          |
+          +--- Java Cryptography Extension (JCE)
+          |
+          +--- ...
+```
+
 ## Things you should know
 1. Mostly Return type will come before the name.
 
@@ -69,7 +105,10 @@
 void main(String[] args) {
 return main(return type paramName) {}
 ```
-
+1. JDK for local development machines for coding, compiling, and debugging Java applications. 
+1. JRE (Java Runtime Environment): Needed in production to run compiled Java applications, end-users use the JRE to run Java applications.
+1. The JVM s part of the JRE and is responsible for running .class files (Java bytecode), runtime engine that executes Java bytecode. included in both JDK and JRE.
+1. JVM basically does Bytecode Execution, Memory Management, Platform Independence.
 1. you can check your java compiler version by `javac -version`
 1. you can check your java version by `java -version`
 1. First compile your java code by `javac -verbose basics/Basics.java`, After compilation, this will generate java.class file along with package and basic statements.

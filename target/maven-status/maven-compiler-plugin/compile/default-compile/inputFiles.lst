@@ -1,8 +1,6 @@
 /Users/alamelu/learnspace/java-basics/src/main/java/basics/control_flow/loop/ForExamples.java
-/Users/alamelu/learnspace/java-basics/src/main/java/basics/Operators/ComparisionExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/math/MathExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/String/StringsExamples.java
-/Users/alamelu/learnspace/java-basics/src/main/java/basics/Operators/AssignmentExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/algorithms/math_algorithms/EuclideanFindDistance.java
 /Users/alamelu/learnspace/java-basics/src/main/java/leet_code/palindrome/QuickSolution.java
 /Users/alamelu/learnspace/java-basics/src/main/java/algorithms/math/InterestCalculator.java
@@ -13,14 +11,16 @@
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/non_primitive_data_type/fixed_array/FixedArrayExample.java
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/primitive_data_type/FloatTypesExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/primitive_data_type/IntegerTypesExamples.java
+/Users/alamelu/learnspace/java-basics/src/main/java/basics/operators/ComparisionExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/oops/BasicClass.java
 /Users/alamelu/learnspace/java-basics/src/main/java/collections_framework/array_list/ArrayListExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/basics/variables/BasicVariablesExamples.java
+/Users/alamelu/learnspace/java-basics/src/main/java/basics/operators/AssignmentExamples.java
+/Users/alamelu/learnspace/java-basics/src/main/java/basics/operators/ArithmeticExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/algorithms/search_algorithms/BinarySearch.java
 /Users/alamelu/learnspace/java-basics/src/main/java/basics/control_flow/loop/WhileExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/basics/control_flow/IfExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/BasicDataTypeExamples.java
-/Users/alamelu/learnspace/java-basics/src/main/java/basics/Operators/ArithmeticExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/basics/SimpleExample.java
 /Users/alamelu/learnspace/java-basics/src/main/java/data_types/DataTypesExamples.java
 /Users/alamelu/learnspace/java-basics/src/main/java/utils/TextFormatter.java
