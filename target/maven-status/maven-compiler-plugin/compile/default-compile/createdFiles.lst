@@ -3,6 +3,7 @@ data_types/primitive_data_type/FloatTypesExamples.class
 data_structures/Basics.class
 collections_framework/array_list/ArrayListExamples.class
 basics/control_flow/ElseIfExamples.class
+leet_code/find_score_of_all_prefixes_of_an_array/FindScoreOfAllPrefixesOfAnArrayProblem.class
 oops/BasicClass.class
 basics/variables/BasicVariablesExamples.class
 algorithms/math/Account.class
