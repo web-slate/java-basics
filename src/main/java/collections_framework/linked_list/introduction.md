@@ -1,6 +1,8 @@
 # Linked List
 - The LinkedList class is a collection which can contain many objects of the same type, just like the ArrayList.
 - LinkedList stores its items in "containers."
+- Learn about hash code, any object should have hash code
+
 
 ## LinkedList Methods in Java
 
