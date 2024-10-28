@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://web-slate.github.io/java-basics/data_structures/array/introduction">
       
       
-        <link rel="prev" href="../../../collections_framework/linked_list/operations">
+        <link rel="prev" href="../../../collections_framework/vector_list/introduction">
       
       
         <link rel="next" href="../../basics">
@@ -2261,6 +2261,72 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_6" id="__nav_12_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vector List
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_6">
+            <span class="md-nav__icon md-icon"></span>
+            Vector List
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections_framework/vector_list/introduction" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3830,7 +3896,8 @@ fixedArray[4] = 50;
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Accessing is faster in Arrays but searching, adding or removing will be "N" because it works through index.</li>
-<li>Java offers additional data structures in the java.util package that behave similarly to arrays</li>
+<li>Java offers additional data structures in the java.util package that behave similarly to arrays.</li>
+<li>basically primitive array values stores the directly the value.</li>
 </ol>
 <table>
 <thead>
@@ -3860,7 +3927,8 @@ fixedArray[4] = 50;
 </table>
 <h2 id="dynamic-size-array-time-complexity-table">Dynamic Size Array - Time Complexity Table</h2>
 <ol>
-<li>Default initial capacity: 10</li>
+<li>Basically array values stores the reference instead of value.</li>
+<li>Default initial capacity: 10.</li>
 <li>Why insertion is faster in Dynamic size arrays with <code>O(1)</code>, its due to Amortized.</li>
 <li>ArrayList typically has constant time O(1) but resizing operation is costly, taking linear time O(n).</li>
 <li>Resizing does not happen every time an element is added so amortized time complexity for adding elements to ArrayList is O(1).</li>
@@ -3870,6 +3938,7 @@ fixedArray[4] = 50;
 <li>After resizing, the next additions again take O(1) until the next resize.</li>
 </ol>
 </li>
+<li>learn about load factor.</li>
 </ol>
 <table>
 <thead>
@@ -3967,7 +4036,7 @@ import java.util.Stack; // follows Last-In-First-Out (LIFO) order and is also th
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../collections_framework/linked_list/operations" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operations">
+          <a href="../../../collections_framework/vector_list/introduction" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3977,7 +4046,7 @@ import java.util.Stack; // follows Last-In-First-Out (LIFO) order and is also th
                 Previous
               </span>
               <div class="md-ellipsis">
-                Operations
+                Introduction
               </div>
             </div>
           </a>
@@ -4024,7 +4093,7 @@ import java.util.Stack; // follows Last-In-First-Out (LIFO) order and is also th
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
