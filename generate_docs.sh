@@ -154,6 +154,7 @@ theme:
     - search.suggest       # Enable search suggestions.
     - search.highlight      # Enable highlighting of search terms.
     - search.share          # Enable sharing of search results.
+    - content.code.copy
 
 plugins:
   - search
