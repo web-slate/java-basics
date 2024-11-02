@@ -1,5 +1,3 @@
-## Fast Track Basics
-
 ### CORE Basics
 
 1. **Q: What is Java?**
