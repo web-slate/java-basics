@@ -4056,75 +4056,75 @@
 </li>
 <li>
 <p><strong>Q: How does garbage collection work in Java?</strong></p>
-</li>
+<ul>
 <li>Garbage collection is the process by which the JVM automatically identifies and discards objects that are no longer in use, freeing up memory resources. </li>
-<li>
-<p>The JVM's garbage collector runs periodically, looking for objects that have no active references to free up (eligible for collection).</p>
+<li>The JVM's garbage collector runs periodically, looking for objects that have no active references to free up (eligible for collection).</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: How to manually trigger garbage collection?</strong></p>
-</li>
-<li>
-<p>You can suggest it by calling <code>System.gc()</code> or <code>Runtime.getRuntime().gc()</code>. However, this is just a hint to the JVM, and it may choose to ignore the request. The JVM will determine the best time to perform garbage collection based on its internal algorithms.</p>
+<ul>
+<li>You can suggest it by calling <code>System.gc()</code> or <code>Runtime.getRuntime().gc()</code>. However, this is just a hint to the JVM, and it may choose to ignore the request. The JVM will determine the best time to perform garbage collection based on its internal algorithms.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Different data types in Java? differentiate between primitive and non-primitive data types??</strong></p>
-</li>
+<ul>
 <li>Java supports two main types of data, they are primitive and non-primitive data types.</li>
 <li><strong>Primitive types</strong>: Basic data types like byte, int, short, long, float, double, char, boolean.</li>
-<li>
-<p><strong>Non Primitive types</strong>: Objects and arrays (e.g., String, ArrayList, etc.). These types are created by the programmer.</p>
+<li><strong>Non Primitive types</strong>: Objects and arrays (e.g., String, ArrayList, etc.). These types are created by the programmer.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is an array? How do you declare, initialize, and access elements in an array in Java?</strong></p>
-</li>
+<ul>
 <li>An array is a collection of elements of the same type stored in contiguous memory locations.</li>
 <li>It is used to store multiple values in a single variable.</li>
 <li><strong>Declaration</strong>: <code>int[] numbers</code>;</li>
 <li><strong>Initialization</strong>: <code>numbers = new int[5];</code> or <code>int[] numbers = {1, 2, 3, 4, 5};</code></li>
-<li>
-<p><strong>Accessing elements</strong>:  Use the index (e.g., <code>numbers[0]</code> to access the first element).</p>
+<li><strong>Accessing elements</strong>:  Use the index (e.g., <code>numbers[0]</code> to access the first element).</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Why data types divided in to two types (primitive and non-primitive)?</strong></p>
-</li>
-<li>
-<p>answers</p>
+<ul>
+<li>answers</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Difference between the == operator and the equals() method in Java?</strong></p>
-</li>
+<ul>
 <li>The <code>==</code> operator checks if two references point to the same memory location.</li>
 <li><code>==</code> operator used to compare primitive data types or to check if two objects refer to the same instance.</li>
 <li><code>equals()</code> method is used to check if two objects are logically equivalent, meaning it compares the actual content or state of the objects.</li>
-<li>
-<p>For example, String class overrides equals() to compare the contents of the strings rather than their memory addresses.</p>
+<li>For example, String class overrides equals() to compare the contents of the strings rather than their memory addresses.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is the purpose of the try-catch block? What happens if an exception is not caught?</strong></p>
-</li>
+<ul>
 <li>A try-catch block is used to handle exceptions in Java. </li>
 <li>The code that might throw an exception is placed in the try block, and any handling code goes in the catch block.</li>
-<li>
-<p>Exceptions in Java can be handled using try-catch blocks.</p>
+<li>Exceptions in Java can be handled using try-catch blocks.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is an exception? How do you handle exceptions in Java?</strong></p>
-</li>
+<ul>
 <li>An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. </li>
-<li>
-<p>There is Checked exceptions and Unchecked exceptions are exist.</p>
+<li>There is Checked exceptions and Unchecked exceptions are exist.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Qistinguishes between Checked exceptions and Unchecked exceptions?</strong></p>
-</li>
+<ul>
 <li><strong>Checked exceptions</strong>: Must be caught or declared in the method signature using throws. These are checked at compile time (e.g., IOException)</li>
-<li>
-<p><strong>Unchecked exceptions</strong>: Do not need to be caught or declared. These occur at runtime (e.g., ArithmeticException, NullPointerException).</p>
+<li><strong>Unchecked exceptions</strong>: Do not need to be caught or declared. These occur at runtime (e.g., ArithmeticException, NullPointerException).</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is a package in Java? Why do we use packages?</strong></p>
-</li>
+<ul>
 <li>A package in Java is a namespace that groups related classes and interfaces together. </li>
 <li>It helps organize code in a modular way, making it easier to manage and avoid naming conflicts.</li>
 <li>Packages also help in access protection by specifying different access levels for classes and members.</li>
@@ -4134,32 +4134,34 @@
 <p>you cannot have more than one package statement in a single Java source file. However, you can import multiple packages using multiple import statements.</p>
 </blockquote>
 </li>
+</ul>
+</li>
 <li>
 <p><strong>Q: What is a 'String' in Java, and how is it different from a 'StringBuilder' or 'StringBuffer'?</strong></p>
-</li>
+<ul>
 <li>A <code>String</code> in Java is an immutable object, meaning once a String is created then value cannot be changed. </li>
-<li>
-<p>But <code>StringBuilder</code> and <code>StringBuffer</code> help to mutate and they are mutable classes that allow you to modify the contents without creating new objects.</p>
+<li>But <code>StringBuilder</code> and <code>StringBuffer</code> help to mutate and they are mutable classes that allow you to modify the contents without creating new objects.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Difference between <code>StringBuffer</code> and <code>StringBuilder</code>?</strong></p>
-</li>
+<ul>
 <li><code>StringBuffer</code> is thread-safe (synchronized) but StringBuilder is not.</li>
-<li>
-<p><code>StringBuilder</code> faster for single-threaded scenarios.</p>
+<li><code>StringBuilder</code> faster for single-threaded scenarios.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What are the loops available in Java and give examples?</strong></p>
-</li>
+<ul>
 <li><strong>for loop</strong>: When number of iterations is known beforehand.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>  for (int i = 0; i &lt; 5; i++) {
     System.out.println(i);
   }
 </code></pre></div></td></tr></table></div></li>
 <li><strong>while loop</strong>: When number of iterations is not known and the loop should continue while a condition is true.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4170,7 +4172,7 @@
   }
 </code></pre></div></td></tr></table></div></li>
 <li><strong>do-while loop</strong>: Similar to the while loop, but the code executes at least once even if the condition is false.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4180,22 +4182,22 @@
       i++;
   } while (i &lt; 5);
 </code></pre></div></td></tr></table></div></li>
-<li>
-<p><strong>Enhanced for loop (for-each)</strong>: Used for iterating over arrays or collections.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<li><strong>Enhanced for loop (for-each)</strong>: Used for iterating over arrays or collections.
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>  int[] numbers = {1, 2, 3, 4, 5};
   for (int num : numbers) {
       System.out.println(num);
   }
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div></li>
+</ul>
 </li>
 <li>
 <p><strong>Q: List a few more checked exceptions and their examples?</strong></p>
-</li>
+<ul>
 <li><strong>IOException</strong>: Occurs when an input-output operation fails.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4221,7 +4223,7 @@
 </code></pre></div></td></tr></table></div></li>
 <li>
 <p><strong>SQLException</strong>: Occurs when there is a database access error.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4250,7 +4252,7 @@
 </li>
 <li>
 <p><strong>ClassNotFoundException</strong>: Occurs when a specified class cannot be found.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4269,52 +4271,55 @@
   }
 </code></pre></div></td></tr></table></div></p>
 </li>
+</ul>
+</li>
 </ol>
 <h3 id="multi-threading">Multi Threading</h3>
 <ol>
-<li><strong>Q: What is thread safety?</strong></li>
-<li><strong>Share data between Threads</strong>: Thread safety ensures that shared data is accessed by multiple threads in a way that prevents data corruption or inconsistency.</li>
 <li>
-<p>When an object or method is thread-safe, it means that it can be used safely by multiple threads simultaneously without causing concurrency issues.</p>
+<p><strong>Q: What is thread safety?</strong></p>
+<ul>
+<li><strong>Share data between Threads</strong>: Thread safety ensures that shared data is accessed by multiple threads in a way that prevents data corruption or inconsistency.</li>
+<li>When an object or method is thread-safe, it means that it can be used safely by multiple threads simultaneously without causing concurrency issues.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Why thread safety?</strong></p>
-</li>
-<li>
-<p>Thread safety became crucial with the advent of multi-threading capabilities in Java.</p>
-</li>
-<li>
-<p><strong>Q: When thread safety was introduced?</strong></p>
-</li>
-<li>
-<p>Supported from the earliest versions of Java (Java 1.0).</p>
+<ul>
+<li>Thread safety became crucial with the advent of multi-threading capabilities in Java.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: When thread safety was introduced?</strong></p>
+<ul>
+<li>Supported from the earliest versions of Java (Java 1.0).</li>
+</ul>
 </li>
 <li>
-<p>Supported from the earliest versions of Java (Java 1.0).</p>
+<p><strong>Q: When thread safety was introduced?</strong></p>
+<ul>
+<li>Supported from the earliest versions of Java (Java 1.0).</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: When to use thread safety?</strong></p>
-</li>
+<ul>
 <li>When multiple threads need to access shared resources (like a variable, collection, or database).</li>
-<li>
-<p>When operations need to be atomic to avoid race conditions.</p>
+<li>When operations need to be atomic to avoid race conditions.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Give a real-time example of thread safe feature?</strong></p>
-</li>
+<ul>
 <li>A banking application where multiple threads may be processing transactions on the same account simultaneously. For instance, depositing and withdrawing money must be thread-safe to avoid race conditions.</li>
-<li>
-<p>Using synchronized blocks or thread-safe collections like ConcurrentHashMap can ensure data consistency.</p>
+<li>Using synchronized blocks or thread-safe collections like ConcurrentHashMap can ensure data consistency.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Give me an example ?</strong></p>
-</li>
-<li>
-<p>A race condition occurs when two or more threads access shared data and try to change it at the same time without proper synchronization.
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<ul>
+<li>A race condition occurs when two or more threads access shared data and try to change it at the same time without proper synchronization.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4393,7 +4398,8 @@
           System.out.println(&quot;Final counter value: &quot; + example.getCounter());
       }
   }
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div></li>
+</ul>
 </li>
 <li>
 <p><strong>Q: int vs Integer vs AtomicInteger ?</strong></p>
@@ -4556,25 +4562,26 @@
 </table>
 <h3 id="oops">OOPS</h3>
 <ol>
-<li><strong>Q: What is Class in Java?</strong></li>
+<li>
+<p><strong>Q: What is Class in Java?</strong></p>
+<ul>
 <li>Class is a blue print for creating objects.</li>
 <li>Defining attributes (members / properties / variable)</li>
-<li>
-<p>Defining behaviours (methods, class functions)</p>
+<li>Defining behaviours (methods, class functions)</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is object in Java?</strong></p>
-</li>
-<li>
-<p>Its an instance of a class.</p>
+<ul>
+<li>Its an instance of a class.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is 'this' keyword in Java?</strong></p>
-</li>
+<ul>
 <li>The this keyword in Java is a reference to the current object instance.</li>
-<li>
-<p>if a parameter name in a constructor or method has the same name as an instance variable, you can use this to differentiate between the instance variable and the parameter.
-      <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<li>if a parameter name in a constructor or method has the same name as an instance variable, you can use this to differentiate between the instance variable and the parameter.
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4587,7 +4594,8 @@
         this.number = number; // &#39;this.number&#39; refers to the instance variable, &#39;number&#39; is the parameter
     }
   }
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div></li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is Access Modifiers in Java?</strong></p>
@@ -4704,24 +4712,24 @@
 </li>
 <li>
 <p><strong>Q: What is constructor and difference between other methods?</strong></p>
-</li>
+<ul>
 <li>Its a special type of method used to initialize objects.</li>
 <li>It will be called when an object is created - <code>ClasssName objectName = new ClasssName()</code></li>
 <li>Unlike regular methods, constructors do not have a return type.</li>
-<li>
-<p><strong>Main Difference</strong>: Methods perform specific operations, whereas constructors initialize the state of an object.</p>
+<li><strong>Main Difference</strong>: Methods perform specific operations, whereas constructors initialize the state of an object.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is static method, variables in Java?</strong></p>
-</li>
+<ul>
 <li>Static methods and variables belong to the class rather than any specific instance of the class.</li>
 <li>They can be accessed directly using the class name without creating an object.</li>
-<li>
-<p><strong>When to use</strong>: Use static members when you want to share the same data or behavior across all instances of a class (e.g., a counter or utility methods like Math.sqrt()).</p>
+<li><strong>When to use</strong>: Use static members when you want to share the same data or behavior across all instances of a class (e.g., a counter or utility methods like Math.sqrt()).</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: What is Method overloading in Java and difference between overloading and overriding?</strong></p>
-</li>
+<ul>
 <li><strong>Method Overloading</strong>: Allows multiple methods with the same name but different parameter lists (type, number, or both) within the same class.</li>
 <li>
 <blockquote>
@@ -4732,7 +4740,7 @@
 <li>
 <blockquote>
 <p>Commonly used in inheritance to provide a specific implementation for a method defined in a superclass.
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4765,6 +4773,8 @@
   }
 </code></pre></div></td></tr></table></div></p>
 </blockquote>
+</li>
+</ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4808,62 +4818,61 @@
 </li>
 <li>
 <p><strong>Q: What is the significance of the final keyword in Java?</strong></p>
-</li>
+<ul>
 <li><code>final</code> keyword can be used in three different contexts:</li>
 <li><strong>Final variable</strong>: Its value cannot be changed once initialized (constant).</li>
 <li><strong>Final method</strong>: Cannot be overridden by subclasses.</li>
 <li><strong>Final class</strong>: Cannot be extended by any other class.</li>
+</ul>
+</li>
 </ol>
 <h3 id="collection-framework">Collection Framework</h3>
 <ol>
-<li><strong>Q: Can you explain the difference between ArrayList and LinkedList?</strong></li>
+<li>
+<p><strong>Q: Can you explain the difference between ArrayList and LinkedList?</strong></p>
+<ul>
 <li>Both ArrayList and LinkedList are implementations of the List interface in Java.</li>
 <li><strong>ArrayList</strong>: Internally uses a dynamic array to store elements.</li>
 <li>It's more efficient for retrieving elements (get and set operations) because elements can be accessed directly via their index.</li>
 <li>However, inserting or deleting elements in the middle of the list will be slower because it requires shifting elements.</li>
 <li><strong>LinkedList</strong>: Uses a doubly linked list to store elements.</li>
 <li>It is more efficient for inserting and deleting elements anywhere in the list.</li>
-<li>
-<p>However, accessing elements is slower because it requires traversing the list.</p>
+<li>However, accessing elements is slower because it requires traversing the list.</li>
+</ul>
 </li>
 <li>
 <p><strong>Q: Can I Use equals() for All Collections Like ArrayList, Vector, List, etc.?</strong></p>
-</li>
+<ul>
 <li>Yes, you can use the <code>equals()</code> method for all standard Java collection classes like ArrayList, Vector, LinkedList, etc.</li>
-<li>When you use <code>equals()</code> on collections, it checks for equality based on the elements and their order in the collection.
-    ```
-        import java.util.ArrayList;
-        import java.util.Vector;<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>public class CollectionEqualsExample {
+<li>
+<p>When you use <code>equals()</code> on collections, it checks for equality based on the elements and their order in the collection.
+```
+    import java.util.ArrayList;
+    import java.util.Vector;</p>
+<p>public class CollectionEqualsExample {
     public static void main(String[] args) {
-        ArrayList&lt;String&gt; list1 = new ArrayList&lt;&gt;();
-        list1.add(&quot;A&quot;);
-        list1.add(&quot;B&quot;);
-        list1.add(&quot;C&quot;);
+        ArrayList<String> list1 = new ArrayList&lt;&gt;();
+        list1.add("A");
+        list1.add("B");
+        list1.add("C");</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>    Vector&lt;String&gt; list2 = new Vector&lt;&gt;();
+    list2.add(&quot;A&quot;);
+    list2.add(&quot;B&quot;);
+    list2.add(&quot;C&quot;);
 
-        Vector&lt;String&gt; list2 = new Vector&lt;&gt;();
-        list2.add(&quot;A&quot;);
-        list2.add(&quot;B&quot;);
-        list2.add(&quot;C&quot;);
-
-        System.out.println(&quot;Are the collections equal? &quot; + list1.equals(list2)); // Output: true
-    }
+    System.out.println(&quot;Are the collections equal? &quot; + list1.equals(list2)); // Output: true
 }
 </code></pre></div></td></tr></table></div>
-<p>```</p>
+<p>}
+      ```</p>
+</li>
+</ul>
 </li>
 </ol>
 
