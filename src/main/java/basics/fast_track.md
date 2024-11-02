@@ -1,15 +1,13 @@
-## Fast Track Basics
-
 ### CORE Basics
 
 1. **Q: What is Java?**
-   - Java is a high-level, object oriented, platform independent programming language. Its key features include being WORA (Write Once, Run Anywhere), 
-   - having built-in garbage collection, and supporting multithreading.
-   - Its different from C++ due to its automatic memory management and absence of pointers.
+    - Java is a high-level, object oriented, platform independent programming language. Its key features include being WORA (Write Once, Run Anywhere), 
+    - having built-in garbage collection, and supporting multithreading.
+    - Its different from C++ due to its automatic memory management and absence of pointers.
 
 1. **Q: What is JVM?**
-   - JVM means Java Virtual Machine.
-   - Its an abstract computing machine responsible for converting java byte code to machine code.
+    - JVM means Java Virtual Machine.
+    - Its an abstract computing machine responsible for converting java byte code to machine code.
 
 1. **Q: How does garbage collection work in Java?**
    - Garbage collection is the process by which the JVM automatically identifies and discards objects that are no longer in use, freeing up memory resources. 
