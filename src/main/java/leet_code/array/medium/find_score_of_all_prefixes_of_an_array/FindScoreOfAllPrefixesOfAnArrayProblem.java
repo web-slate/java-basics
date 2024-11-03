@@ -1,9 +1,9 @@
-package leet_code.find_score_of_all_prefixes_of_an_array;
+package leet_code.array.medium.find_score_of_all_prefixes_of_an_array;
 
 import java.util.Arrays;
 
 /**
- * ## 2640. Find the Score of All Prefixes of an Array (Medium)
+ * ## 2640. Find the Score of All Prefixes of an Array (Medium) - Prefix Sum
  * 
  * > We define the conversion array conver of an array arr as follows:
  * 
@@ -160,6 +160,6 @@ public class FindScoreOfAllPrefixesOfAnArrayProblem {
  * Command to Run:  
  * 
 ```
-javac leet_code/find_score_of_all_prefixes_of_an_array/FindScoreOfAllPrefixesOfAnArrayProblem.java && java leet_code.find_score_of_all_prefixes_of_an_array.FindScoreOfAllPrefixesOfAnArrayProblem
+javac leet_code/array/medium/find_score_of_all_prefixes_of_an_array/FindScoreOfAllPrefixesOfAnArrayProblem.java && java leet_code.array.medium.find_score_of_all_prefixes_of_an_array.FindScoreOfAllPrefixesOfAnArrayProblem
 ```
  */

@@ -1,9 +1,9 @@
-package leet_code.move_zeroes;
+package leet_code.array.easy.move_zeroes;
 
 import java.util.Arrays;
 
 /**
-* ## 283. Move Zeroes (Easy)
+* ## 283. Move Zeroes (Easy) - Two Pointers
  * 
  * > Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
  * 
@@ -119,6 +119,6 @@ public class MoveZeroesProblem {
  * Command to Run:  
  * 
 ```
-javac leet_code/move_zeroes/MoveZeroesProblem.java  && java leet_code/move_zeroes/MoveZeroesProblem
+javac leet_code/array/easy/move_zeroes/MoveZeroesProblem.java  && java leet_code/array/easy/move_zeroes/MoveZeroesProblem
 ```
  */
