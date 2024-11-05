@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../../../../two_sum">
+        <link rel="next" href="../../valid_palindrome_2">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -3706,10 +3706,148 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#125-valid-palindrome-easy-two-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      125. Valid Palindrome (easy) - Two Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="125. Valid Palindrome (easy) - Two Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rough-approach-quick-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rough Approach: Quick Solution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-brute-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 1: Brute Force
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-sub-optimal-solution-uses-uses-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 2: Sub Optimal solution uses Uses recursion.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-3-optimized-solution-using-two-pointer-without-extra-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 3: Optimized Solution using Two Pointer without extra space
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_15_3_1_2" id="__nav_15_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Valid Palindrome 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_15_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Valid Palindrome 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../valid_palindrome_2" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../valid_palindrome_2/valid_palindrome2problem" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Valid Palindrome2problem
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4305,6 +4443,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#125-valid-palindrome-easy-two-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      125. Valid Palindrome (easy) - Two Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="125. Valid Palindrome (easy) - Two Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rough-approach-quick-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rough Approach: Quick Solution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-brute-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 1: Brute Force
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-sub-optimal-solution-uses-uses-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 2: Sub Optimal solution uses Uses recursion.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-3-optimized-solution-using-two-pointer-without-extra-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 3: Optimized Solution using Two Pointer without extra space
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4514,7 +4703,7 @@
 </code></pre></div></td></tr></table></div></p>
 </blockquote>
 <h2 id="problem-description">Problem Description</h2>
-<p>## 125. Valid Palindrome (easy) - Two Pointers</p>
+<h2 id="125-valid-palindrome-easy-two-pointers">125. Valid Palindrome (easy) - Two Pointers</h2>
 <blockquote>
 <p>A phrase is a palindrome if, after converting all uppercase letters into
  lowercase letters and removing all non-alphanumeric characters, it reads the
@@ -4541,8 +4730,8 @@
 <p>Constraints:</p>
 <p>1 &lt;= s.length &lt;= 2 105
  s consists only of printable ASCII characters.</p>
-<p>### Rough Approach: Quick Solution
- **This quick solution uses regular expressions to clean the string and checks
+<h3 id="rough-approach-quick-solution">Rough Approach: Quick Solution</h3>
+<p>**This quick solution uses regular expressions to clean the string and checks
  if it reads the same backward and forward by comparing the cleaned string to
  its reversed form.</p>
 <ol>
@@ -4557,8 +4746,8 @@
  and 💾 Space Complexity is linear O(n) for (Storing cleaned string: O(n) and
  Reversed string: O(n))</p>
 </blockquote>
-<p>### Approach 1: Brute Force
- **In this approach, String Manipulation and Reversal will be used.</p>
+<h3 id="approach-1-brute-force">Approach 1: Brute Force</h3>
+<p>**In this approach, String Manipulation and Reversal will be used.</p>
 <p><strong>Why Brute Force</strong>*?: Creates new string and reverses it - more memory
  intensive</p>
 <ol>
@@ -4575,8 +4764,8 @@
 </blockquote>
 <p>Runtime: 14ms Beats 31.25%
  Memory: 44.92 MB and Beats 25.15%</p>
-<p>### Approach 2: Sub Optimal solution uses Uses recursion.
- <strong>In this approach, we use recursion</strong></p>
+<h3 id="approach-2-sub-optimal-solution-uses-uses-recursion">Approach 2: Sub Optimal solution uses Uses recursion.</h3>
+<p><strong>In this approach, we use recursion</strong></p>
 <ol>
 <li><strong>Why Sub-Optimal</strong>?: Uses stack space and multiple string operations.</li>
 </ol>
@@ -4588,8 +4777,8 @@
 </blockquote>
 <p>Runtime: 5ms Beats 42.65%
  Memory: 50.09 MB and Beats 5.93%</p>
-<p>### Approach 3: Optimized Solution using Two Pointer without extra space
- (In-place two pointer approach also
+<h3 id="approach-3-optimized-solution-using-two-pointer-without-extra-space">Approach 3: Optimized Solution using Two Pointer without extra space</h3>
+<p>(In-place two pointer approach also
  known as Two-Pointer Technique with In-place Checking)
  <strong>This solution combines the filtering and palindrome checking in one pass
  using two pointers,
@@ -4651,7 +4840,7 @@
         
         
           
-          <a href="../../../../two_sum" class="md-footer__link md-footer__link--next" aria-label="Next: Index">
+          <a href="../../valid_palindrome_2" class="md-footer__link md-footer__link--next" aria-label="Next: Index">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
