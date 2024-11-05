@@ -23,6 +23,7 @@ basics/operators/AssignmentExamples.class
 data_types/math/MathExamples.class
 leet_code/array/easy/move_zeroes/MoveZeroesProblem.class
 basics/control_flow/IfExamples.class
+leet_code/string/easy/valid_palindrome_2/ValidPalindrome2Problem.class
 basics/control_flow/IfElseExamples.class
 leet_code/array/medium/find_score_of_all_prefixes_of_an_array/FindScoreOfAllPrefixesOfAnArrayProblem.class
 basics/control_flow/loop/WhileExamples.class
