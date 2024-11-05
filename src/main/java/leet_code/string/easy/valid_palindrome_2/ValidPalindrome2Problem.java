@@ -1,7 +1,7 @@
 package leet_code.string.easy.valid_palindrome_2;
 
 /**
- * ## 680. Valid Palindrome II (easy) - Two Pointers
+* ## 680. Valid Palindrome II (easy) - Two Pointers
  * 
  * Given a string s, return true if the s can be palindrome after deleting at
  * most one character from it.
@@ -26,7 +26,7 @@ package leet_code.string.easy.valid_palindrome_2;
  * 1 <= s.length <= 105
  * s consists of lowercase English letters.
  * 
- * ### Rough Approach: Quick Solution
+* ### Rough Approach: Quick Solution
  * **Approach**: This uses uses a two-pointer technique to check for mismatches
  * while traversing from both ends of the string towards the center.
  * If a mismatch occurs, it checks if either of the substrings (after removing
@@ -41,7 +41,7 @@ package leet_code.string.easy.valid_palindrome_2;
  * iterates from both ends.
  * > 💾 Space Complexity is constant O(1)), no additional space is used.
  * 
- * ### Approach 1: Brute Force
+* ### Approach 1: Brute Force
  * **In this approach, we'll try removing each character one by one and checking
  * if the resulting string is a palindrome.
  * 
@@ -56,7 +56,7 @@ package leet_code.string.easy.valid_palindrome_2;
  * Runtime: 14ms Beats 31.25%
  * Memory: 44.92 MB and Beats 25.15%
  * 
- * ### Approach 2: Sub Optimal solution uses Uses recursion.
+* ### Approach 2: Sub Optimal solution uses Uses recursion.
  * **In this approach**: This solution uses a single check with two pointers,
  * attempting to only make the minimum number of recursive calls.
  * 
@@ -72,7 +72,7 @@ package leet_code.string.easy.valid_palindrome_2;
  * Runtime: 5ms Beats 42.65%
  * Memory: 50.09 MB and Beats 5.93%
  * 
- * ### Approach 3: Optimized Solution using Two pointers with optimized
+* ### Approach 3: Optimized Solution using Two pointers with optimized
  * validation
  * **Technique**: Two-pointer technique with early termination.
  * **Improvements**: No string manipulation, Minimal checks, Early termination,
