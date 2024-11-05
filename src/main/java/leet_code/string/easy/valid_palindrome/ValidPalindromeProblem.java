@@ -1,7 +1,7 @@
 package leet_code.string.easy.valid_palindrome;
 
 /**
- * ## 125. Valid Palindrome (easy) - Two Pointers
+* ## 125. Valid Palindrome (easy) - Two Pointers
  * 
  * > A phrase is a palindrome if, after converting all uppercase letters into
  * lowercase letters and removing all non-alphanumeric characters, it reads the
@@ -36,7 +36,7 @@ package leet_code.string.easy.valid_palindrome;
  * 1 <= s.length <= 2 * 105
  * s consists only of printable ASCII characters.
  * 
- * ### Rough Approach: Quick Solution
+* ### Rough Approach: Quick Solution
  * **This quick solution uses regular expressions to clean the string and checks
  * if it reads the same backward and forward by comparing the cleaned string to
  * its reversed form.
@@ -52,7 +52,7 @@ package leet_code.string.easy.valid_palindrome;
  * and 💾 Space Complexity is linear O(n) for (Storing cleaned string: O(n) and
  * Reversed string: O(n))
  * 
- * ### Approach 1: Brute Force
+* ### Approach 1: Brute Force
  * **In this approach, String Manipulation and Reversal will be used.
  * 
  * **Why Brute Force***?: Creates new string and reverses it - more memory
@@ -71,7 +71,7 @@ package leet_code.string.easy.valid_palindrome;
  * Runtime: 14ms Beats 31.25%
  * Memory: 44.92 MB and Beats 25.15%
  * 
- * ### Approach 2: Sub Optimal solution uses Uses recursion.
+* ### Approach 2: Sub Optimal solution uses Uses recursion.
  * **In this approach, we use recursion**
  * 
  * 1. **Why Sub-Optimal**?: Uses stack space and multiple string operations.
@@ -84,7 +84,7 @@ package leet_code.string.easy.valid_palindrome;
  * Runtime: 5ms Beats 42.65%
  * Memory: 50.09 MB and Beats 5.93%
  * 
- * ### Approach 3: Optimized Solution using Two Pointer without extra space
+* ### Approach 3: Optimized Solution using Two Pointer without extra space
  * (In-place two pointer approach also
  * known as Two-Pointer Technique with In-place Checking)
  * **This solution combines the filtering and palindrome checking in one pass
